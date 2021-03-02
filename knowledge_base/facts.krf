@@ -105,6 +105,9 @@
 (isa MaraschinoCherry Cherry)
 (isa Aperol Liquor-Drink)
 
+(isa MaraschinoLiqueur Liquor-Drink)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; if a fruit is a citrus fruit, then it is sour

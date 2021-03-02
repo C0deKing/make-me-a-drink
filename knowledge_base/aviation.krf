@@ -1,5 +1,9 @@
 (in-microtheory AviationMt)
 
-(isa Aviation CocktailDrink)
+(isa AviationCocktail CocktailDrink)
 
-
+(ingredientOf Gin AviationCocktail)
+(ingredientOf MaraschinoLiqueur AviationCocktail)
+(ingredientOf (JuiceOfFn Lemon) AviationCocktail)
+(ingredientOf IceCube AviationCocktail)
+(ingredientOf MaraschinoCherry AviationCocktail)
