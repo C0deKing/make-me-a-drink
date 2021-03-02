@@ -9,11 +9,21 @@
 ;;; (isa WhiskeyBrand )
 ;;; (isa RumBrand )
 ;;; (isa WineBrand )
-;;; (isa TequilaCocktail )
-;;; (isa VodkaCocktail )
-;;; (isa GinCocktail )
-;;; (isa WhiskeyCocktail )
-;;; (isa RumCocktail )
+
+(isa TequilaCocktail SpatiallyDisjointObjectType)
+(genls TequilaCocktail Cocktail)
+
+(isa VodkaCocktail SpatiallyDisjointObjectType)
+(genls VodkaCocktail Cocktail)
+
+(isa GinCocktail SpatiallyDisjointObjectType)
+(genls GinCocktail Cocktail)
+
+(isa WhiskeyCocktail SpatiallyDisjointObjectType)
+(genls WhiskeyCocktail Cocktail)
+
+(isa RumCocktail SpatiallyDisjointObjectType)
+(genls RumCocktail Cocktail)
 
 (isa TequilaBrand DefaultDisjointEdibleStuffType)
 (genls TequilaBrand Liquor-Drink)
