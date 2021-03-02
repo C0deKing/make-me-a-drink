@@ -1,0 +1,145 @@
+(in-microtheory MakeMeADrinkFactsMt)
+(genlMt MakeMeADrinkMt MakeMeADrinkFactsMt)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(isa Daiquiri RumCocktail)
+(isa Mojito RumCocktail)
+(isa MaiTai RumCocktail)
+(isa PinaColada RumCocktail)
+(isa PainKiller RumCocktail)
+(isa Zombie RumCocktail)
+
+(isa Margarita TequilaCocktail)
+(isa Paloma TequilaCocktail)
+(isa TequilaSunrise TequilaCocktail)
+
+(isa Manhattan WhiskeyCocktail)
+(isa OldFashioned WhiskeyCocktail)
+(isa Sazerac WhiskeyCocktail)
+(isa WhiskeySour WhiskeyCocktail)
+(isa MintJulep WhiskeyCocktail)
+
+(isa Negroni GinCocktail)
+(isa French75 GinCocktail)
+(isa Gimlet GinCocktail)
+(isa Bramble GinCocktail)
+(isa TomCollins GinCocktail)
+(isa Aviation GinCocktail)
+(isa SingaporeSling GinCocktail)
+(isa GinMartini GinCocktail)
+
+(isa MoscowMule VodkaCocktail)
+(isa Cosmopolitan VodkaCocktail)
+(isa VodkaMartini VodkaCocktail)
+(isa BloodyMary VodkaCocktail)
+(isa Screwdriver VodkaCocktail)
+(isa WhiteRussian VodkaCocktail)
+(isa LemonDrop VodkaCocktail)
+
+(isa DonJulio TequilaBrand)
+(isa Patron TequilaBrand)
+(isa JoseCuervo TequilaBrand)
+(isa ClaseAzul TequilaBrand)
+(isa ElJimador TequilaBrand)
+(isa CasaNoble TequilaBrand)
+(isa Espolon TequilaBrand)
+(isa Casamigos TequilaBrand)
+(isa Hornitos TequilaBrand)
+(isa SauzaTequilaBrand TequilaBrand)
+
+(isa Absolut VodkaBrand)
+(isa GreyGoose VodkaBrand)
+(isa Belvedere VodkaBrand)
+(isa Smirnoff VodkaBrand)
+(isa Svedka VodkaBrand)
+(isa KetelOne VodkaBrand)
+(isa Skyy VodkaBrand)
+(isa Nemiroff VodkaBrand)
+(isa Pinnacle VodkaBrand)
+(isa Ciroc VodkaBrand)
+(isa Stolichnaya VodkaBrand)
+
+(isa Beefeater GinBrand)
+(isa BonbaySapphire GinBrand)
+(isa Hendricks GinBrand)
+(isa Tanqueray GinBrand)
+(isa Botanist GinBrand)
+(isa Aviation GinBrand)
+(isa Monkey47 GinBrand)
+(isa Slipsmith GinBrand)
+(isa Gordons GinBrand)
+(isa GinMare GinBrand)
+(isa Plymouth GinBrand)
+
+(isa Bacardi RumBrand)
+(isa CaptainMorgan RumBrand)
+(isa AppletonEstate RumBrand)
+(isa Diplomatico RumBrand)
+(isa HavanaClub RumBrand)
+(isa Malibu RumBrand)
+(isa DonQ RumBrand)
+(isa Plantation RumBrand)
+(isa TheRealMcCoy RumBrand)
+(isa AppletonEstate RumBrand)
+(isa FlorDeCana RumBrand)
+
+(isa MakersMark WhiskeyBrand)
+(isa ElijahCraig WhiskeyBrand)
+(isa LongBranch WhiskeyBrand)
+(isa JackDaniels WhiskeyBrand)
+(isa JohnnyWalker WhiskeyBrand)
+(isa KnobCreek WhiskeyBrand)
+(isa JamesonIrish WhiskeyBrand)
+(isa BasilHaydens WhiskeyBrand)
+(isa WoodfordReserve WhiskeyBrand)
+(isa BulleitBourbon WhiskeyBrand)
+(isa Fireball WhiskeyBrand)
+
+(isa Cointreau TripleSec)
+
+(isa AngosturaBitters Bitters)
+(isa PeychaudsBitters Bitters)
+(isa OrangeBitters Bitters)
+
+(isa MaraschinoCherry Cherry)
+(isa Aperol Liquor-Drink)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; if a fruit is a citrus fruit, then it is sour
+(<== (isSour ?fruit)
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit juice comes from a citrus fruit, then it is sour
+(<== (isSour JuiceOfFn(?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit is a stone fruit, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit StoneFruit))
+
+(<== (isSweet JuiceOfFn(?fruit))
+     (isa ?fruit StoneFruit))
+
+;;; if a fruit is a berry, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit BerryFruit))
+
+(<== (isSweet JuiceOfFn(?fruit))
+     (isa ?fruit BerryFruit))
+
+;;; if something is a simple syrup, then it is sweet
+(<== (isSweet ?syrup)
+     (isa ?syrup SimpleSyrup))
+
+;;; if something is a bitters, then it is bitter
+(<== (isBitter ?bitter)
+     (isa ?bitter Bitters))
+
+;;; if an ingredient is a zest, then it is a garnish
+(<== (isGarnish ?zest)
+     (isa ?zest ZestOfFn(?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;; need a rule to connect a liquor brand to the liquor

@@ -1,0 +1,304 @@
+(in-microtheory MakeMeADrinkOntologyMt)
+(genlMt MakeMeADrinkMt MakeMeADrinkOntologyMt)
+
+;;; Collections ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; (isa TequilaBrandBrand )
+;;; (isa VodkaBrandBrand )
+;;; (isa GinBrandBrand )
+;;; (isa WhiskeyBrand )
+;;; (isa RumBrand )
+;;; (isa WineBrand )
+;;; (isa TequilaCocktail )
+;;; (isa VodkaCocktail )
+;;; (isa GinCocktail )
+;;; (isa WhiskeyCocktail )
+;;; (isa RumCocktail )
+
+(isa TequilaBrand DefaultDisjointEdibleStuffType)
+(genls TequilaBrand Liquor-Drink)
+(comment TequilaBrand "A distilled beverage made from blue agave.")
+
+(isa AnejoTequilaBrand DefaultDisjointEdibleStuffType)
+(genls AnejoTequilaBrand TequilaBrand)
+(comment AnejoTequilaBrand "A mature TequilaBrand that must be aged one to three years.")
+
+(isa ReposadoTequilaBrand DefaultDisjointEdibleStuffType)
+(genls ReposadoTequilaBrand TequilaBrand)
+(comment ReposadoTequilaBrand "A TequilaBrand that must be aged two to twelve months.")
+
+(isa BlancoTequilaBrand DefaultDisjointEdibleStuffType)
+(genls BlancoTequilaBrand Liquor-Drink )
+(comment BlancoTequilaBrand "A young TequilaBrand that is un-aged.")
+
+(isa Mezcal DefaultDisjointEdibleStuffType)
+(genls Mezcal Liquor-Drink)
+(comment Mezcal "A distilled beverage made from any agave.")
+
+(isa VodkaBrand DefaultDisjointEdibleStuffType)
+(genls VodkaBrand Liquor-Drink)
+(comment VodkaBrand "A distilled beverage composed of water and ethanol.")
+
+(isa GinBrand DefaultDisjointEdibleStuffType)
+(genls GinBrand Liquor-Drink)
+(comment GinBrand "A distilled beverage made from juniper berries.")
+
+(isa Whiskey DefaultDisjointEdibleStuffType)
+(genls Whiskey Liquor-Drink)
+(comment Whiskey "A distilled beverage made from fermented grain mash or distilled beer.")
+
+(isa Scotch DefaultDisjointEdibleStuffType)
+(genls Scotch Whiskey)
+(comment Scotch "A type of whiskey made in Scotland using malted barley.")
+
+(isa Bourbon DefaultDisjointEdibleStuffType)
+(genls Bourbon Whiskey)
+(comment Bourbon "A type of whiskey made in the U.S.A. using corn.")
+
+(isa Rum DefaultDisjointEdibleStuffType)
+(genls Rum Liquor-Drink)
+(comment Rum "A distilled beverage made from sugarcane molasses or sugercane juice.")
+
+(isa DarkRum DefaultDisjointEdibleStuffType)
+(genls DarkRum Rum)
+(comment DarkRum "A type of rum made from dark molasses.")
+
+(isa LightRum DefaultDisjointEdibleStuffType)
+(genls LightRum Rum)
+(comment LightRum "A type of rum with a light taste and clear color.")
+
+(isa Soju DefaultDisjointEdibleStuffType)
+(genls Soju Liquor-Drink)
+(comment Soju "A distilled beverage made in Korea using rice, wheat or barley.")
+
+(isa Sake DefaultDisjointEdibleStuffType)
+(genls Sake Liquor-Drink)
+(comment Sake "A distilled beverage made in Japan using fermented rice.")
+
+(isa Absinthe DefaultDisjointEdibleStuffType)
+(genls Absinthe Liquor-Drink)
+(comment Absinthe "A distilled beverage made from plants, flowers and woormwood leaves.")
+
+(isa Liqueur DefaultDisjointEdibleStuffType)
+(genls Liqueur Liquor-Drink)
+(comment Liqueur "A strong, sweet alcoholic liquor typically containing additionalflavorings.")
+
+(isa OrangeLiqueur DefaultDisjointEdibleStuffType)
+(genls OrangeLiqueur Liqueur)
+(comment OrangeLiqueur "A type of sweet, orange-flavored liqueur.")
+
+(isa TripleSec DefaultDisjointEdibleStuffType)
+(genls TripleSec OrangeLiqueuer)
+(comment TripleSec "Orange-flavored liqueur made from dried bitter and sweet oranges.")
+
+(isa Wine DefaultDisjointEdibleStuffType)
+(genls Wine AlcoholicBeverage)
+(comment Wine "An alcoholic drink made from fermented grape juice.")
+
+(isa Brandy DefaultDisjointEdibleStuffType)
+(genls Brandy Wine)
+(comment Brandy "An alcoholic beverage made from distilled wine.")
+
+(isa Cognac DefaultDisjointEdibleStuffType)
+(genls Cognac Brandy)
+(comment Cognac "An high-quality brandy that is distilled in France.")
+
+(isa Vermouth DefaultDisjointEdibleStuffType)
+(genls Vermouth Wine)
+(comment Vermouth "An aromatized fortified wine.")
+
+(isa Sherry DefaultDisjointEdibleStuffType)
+(genls Sherry Wine)
+(comment Sherry "A fortified wine made from white grapes.")
+
+(isa RedWine DefaultDisjointEdibleStuffType)
+(genls RedWine Wine)
+(comment RedWine "A type of wine made from dark-colored grape varieties.")
+
+(isa WhiteWine DefaultDisjointEdibleStuffType)
+(genls WhiteWine Wine)
+(comment WhiteWine "A type of wine made from light-colored grape varieities.")
+
+(isa SparklingWine DefaultDisjointEdibleStuffType)
+(genls SparklingWine Wine)
+(comment SparklingWine "A fizzy wine with carbon dioxide.")
+
+(isa Prosecco DefaultDisjointEdibleStuffType)
+(genls Prosecco SparklingWine)
+(comment Prosecco "An Italian sparkling white wine.")
+
+(isa Champagne DefaultDisjointEdibleStuffType)
+(genls Champagne SparklingWine)
+(comment Champagne "A type of sparkling wine made in France.")
+
+(isa Beer DefaultDisjointEdibleStuffType)
+(genls Beer Alcoholic Beverage)
+(comment Beer "An alcoholic drink made from cereal grains.")
+
+(isa Cider DefaultDisjointEdibleStuffType)
+(genls Cider AlcoholicBeverage)
+(comment Cider "An alcoholic beverage made from fermented apple juice.")
+
+(isa Juice DefaultDisjointEdibleStuffType)
+(genls Juice Drink)
+(comment Juice "A drink made from extracting the natural liquid contained in fruits andvegetables.")
+
+(isa SimpleSyrup DefaultDisjointEdibleStuffType)
+(genls SimpleSyrup LiquidTangibleThing)
+(comment SimpleSyrup "A sweetening agent made by dissolving sugar in water.")
+
+(isa Bitters DefaultDisjointEdibleStuffType)
+(genls Bitters LiquidTangibleThing)
+(comment Bitters "A bitter alcoholic additive made using botanical matter.")
+
+(isa CitrusFruit SpatiallyDisjointObjectType)
+(genls CitrusFruit Fruit)
+(comment CitrusFruit "A group of fruits belonGinBrandg to the Citrus genus.")
+
+(isa BerryFruit SpatiallyDisjointObjectType)
+(genls BerryFruit Fruit)
+(comment BerryFruit "A small, pulpy fruit with no pit that is produced by a single flower containing one ovary.")
+
+(isa StoneFruit SpatiallyDisjointObjectType)
+(genls StoneFruit Fruit)
+(comment StoneFruit "A fruit in which the outer fleshy part surrounds a single hardenedseed.")
+
+(isa Lemon SpatiallyDisjointObjectType)
+(genls Lemon CitrusFruit)
+(comment Lemon "A yellow, citrus fruit known for its sour taste.")
+
+(isa Lime SpatiallyDisjointObjectType)
+(genls Lime CitrusFruit)
+(comment Lime "A green citrus fruit known for its sour taste.")
+
+(isa Orange SpatiallyDisjointObjectType)
+(genls Orange CitrusFruit)
+(comment Orange "An orange, citrus fruit that can be sweet or bitter depending on theregion it is grown in.")
+
+(isa Grapefruit SpatiallyDisjointObjectType)
+(genls Grapefruit CitrusFruit)
+(comment Grapefruit "A tropical citrus fruit known for its sweet and sour taste.")
+
+(isa Blueberry SpatiallyDisjointObjectType)
+(genls Blueberry BerryFruit)
+(comment Blueberry "A blue or purple berry that come from perennial flowering plants.")
+
+(isa Cranberry SpatiallyDisjointObjectType)
+(genls Cranberry BerryFruit)
+(comment Cranberry "A red berry that comes from evergreen dwarf shrubs.")
+
+(isa Peach SpatiallyDisjointObjectType)
+(genls Peach StoneFruit)
+(comment Peach "A juicy fruit known for its sweet taste.")
+
+(isa Mango SpatiallyDisjointObjectType)
+(genls Mango StoneFruit)
+(comment Mango "A stone fruit grown on a flowering plant tree in the tropics.")
+
+(isa Cherry SpatiallyDisjointObjectType)
+(genls Cherry StoneFruit)
+(comment Cherry "A stone fruit grown on trees known for its sour and sweet taste.")
+
+(isa Herb SpatiallyDisjointObjectType)
+(genls Herb PlantBLO)
+(comment Herb "A plant with savory and aromatic properties often used in cooking and cocktails.")
+
+(isa Mint SpatiallyDisjointObjectType)
+(genls Mint Herb)
+(comment Mint "A plant that belongs to the Lamiaceae family known for its refreshing taste.")
+
+(isa Lavender SpatiallyDisjointObjectType)
+(genls Lavender Herb)
+(comment Lavender "A flowering plant belonGinBrandg to the mint family.")
+
+(isa Tomato DefaultDisjointEdibleStuffType)
+(genls Tomato Vegetable-Food)
+(comment Tomato "An edible red berry from a tomato plant.")
+
+;;; Predicates ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(isa isSweet BinaryPredicate)
+(arity isSweet 1)
+(comment isSweet "This relation denotes that an ingredient is sweet.")
+
+(isa isSour BinaryPredicate)
+(arity isSour 1)
+(comment isSour "This relation denotes that an ingredient is sour.")
+
+(isa isBitter BinaryPredicate)
+(arity isBitter 1)
+(comment isBitter "This relation denotes that an ingredient is bitter.")
+
+(isa isSpicy BinaryPredicate)
+(arity isSpicy 1)
+(comment isSpicy "This relation denotes that an ingredient is spicy.")
+
+(isa isGarnish BinaryPredicate)
+(arity isGarnish 1)
+(comment isGarnish "This relation denotes that an ingredient is a garnish.")
+
+(isa onePart BinaryPredicate)
+;;; (genls onePart )
+(arity onePart 2)
+(arg1Isa onePart CocktailDrink)
+(arg2Isa onePart LiquidTangibleThing)
+(comment onePart "This relation denotes that a cocktail contains one part of a drink.")
+
+(isa twoParts BinaryPredicate)
+;;; (genls twoParts )
+(arity twoParts 2)
+(arg1Isa twoParts CocktailDrink)
+(arg2Isa twoParts LiquidTangibleThing)
+(comment twoParts "This relation denotes that a cocktail contains two parts of a drink.")
+
+(isa threeParts BinaryPredicate)
+;;; (genls threeParts )
+(arity threeParts 2)
+(arg1Isa threeParts CocktailDrink)
+(arg2Isa threeParts LiquidTangibleThing)
+(comment threeParts "This relation denotes that a cocktail contains three parts of a drink.")
+
+(isa JuiceOfFn UnaryFunction)
+;;; (genls JuiceOfFn )
+(arity JuiceOfFn 1)
+(arg1Isa JuiceOfFn DefaultDisjointEdibleStuffType)
+(resultGenl JuiceOfFn Juice)
+(comment JuiceOfFn "This function denotes the juice of a fruit or vegetable.")
+
+(isa ZestOfFn UnaryFunction)
+;;; (genls ZestOfFn )
+(arity ZestOfFn 1)
+(arg1Isa ZestOfFn DefaultDisjointEdibleStuffType)
+(comment ZestOfFn "This function denotes the zest of a fruit or vegetable.")
+
+(isa MuddledFn UnaryFunction)
+;;; (genls MuddledFn )
+(arity MuddledFn 1)
+(arg1Isa MuddledFn DefaultDisjointEdibleStuffType)
+(comment MuddledFn "This function denotes that an edible ingredient is muddled.")
+
+(isa ShakenFn UnaryFunction)
+;;; (genls ShakenFn )
+(arity ShakenFn 1)
+(arg1Isa ShakenFn CocktailDrink)
+(comment ShakenFn "This function denotes that a cocktail is shaken.")
+
+(isa StirredFn UnaryFunction)
+;;; (genls StirredFn )
+(arity StirredFn 1)
+(arg1Isa StirredFn CocktailDrink)
+(comment StirredFn "This function denotes that a cocktail is stirred.")
+
+(isa LiqueurFn UnaryFunction)
+;;; (genls LiqueurFn )
+(arity LiqueurFn 1)
+(arg1Isa LiqueurFn DefaultDisjointEdibleStuffType)
+(resultGenl LiqueurFn Liqueur)
+(comment LiqueurFn "This function denotes the liqueur of an edible edible food item.")
+
+(isa SimpleSyrupFn UnaryFunction)
+;;; (genls SimpleSyrupFn )
+(arity SimpleSyrupFn 1)
+(arg1Isa SimpleSyrupFn DefaultDisjointEdibleStuffType)
+(resultGenl SimpleSyrupFn SimpleSyrup)
+(comment SimpleSyrupFn "This function denotes the simple syrup of an edible food item.")
