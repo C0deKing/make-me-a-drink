@@ -142,7 +142,7 @@
 (comment Champagne "A type of sparkling wine made in France.")
 
 (isa Beer DefaultDisjointEdibleStuffType)
-(genls Beer Alcoholic Beverage)
+(genls Beer AlcoholicBeverage)
 (comment Beer "An alcoholic drink made from cereal grains.")
 
 (isa Cider DefaultDisjointEdibleStuffType)
@@ -231,23 +231,23 @@
 (arity ingredientOf 2)
 (comment ingredientOf "This relation denotes that an ingredient is part of a cocktail.")
 
-(isa isSweet BinaryPredicate)
+(isa isSweet Predicate)
 (arity isSweet 1)
 (comment isSweet "This relation denotes that an ingredient is sweet.")
 
-(isa isSour BinaryPredicate)
+(isa isSour Predicate)
 (arity isSour 1)
 (comment isSour "This relation denotes that an ingredient is sour.")
 
-(isa isBitter BinaryPredicate)
+(isa isBitter Predicate)
 (arity isBitter 1)
 (comment isBitter "This relation denotes that an ingredient is bitter.")
 
-(isa isSpicy BinaryPredicate)
+(isa isSpicy Predicate)
 (arity isSpicy 1)
 (comment isSpicy "This relation denotes that an ingredient is spicy.")
 
-(isa isGarnish BinaryPredicate)
+(isa isGarnish Predicate)
 (arity isGarnish 1)
 (comment isGarnish "This relation denotes that an ingredient is a garnish.")
 

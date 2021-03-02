@@ -112,21 +112,21 @@
      (isa ?fruit CitrusFruit))
 
 ;;; if a fruit juice comes from a citrus fruit, then it is sour
-(<== (isSour JuiceOfFn(?fruit))
+(<== (isSour (JuiceOfFn ?fruit))
      (isa ?fruit CitrusFruit))
 
 ;;; if a fruit is a stone fruit, then it is sweet
 (<== (isSweet ?fruit)
      (isa ?fruit StoneFruit))
 
-(<== (isSweet JuiceOfFn(?fruit))
+(<== (isSweet (JuiceOfFn ?fruit))
      (isa ?fruit StoneFruit))
 
 ;;; if a fruit is a berry, then it is sweet
 (<== (isSweet ?fruit)
      (isa ?fruit BerryFruit))
 
-(<== (isSweet JuiceOfFn(?fruit))
+(<== (isSweet (JuiceOfFn ?fruit))
      (isa ?fruit BerryFruit))
 
 ;;; if something is a simple syrup, then it is sweet
@@ -139,7 +139,7 @@
 
 ;;; if an ingredient is a zest, then it is a garnish
 (<== (isGarnish ?zest)
-     (isa ?zest ZestOfFn(?fruit))
+     (isa ?zest (ZestOfFn ?fruit))
      (isa ?fruit CitrusFruit))
 
 ;;; need a rule to connect a liquor brand to the liquor
