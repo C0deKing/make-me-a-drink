@@ -217,6 +217,10 @@
 
 ;;; Predicates ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(isa ingredientOf BinaryPredicate)
+(arity ingredientOf 2)
+(comment ingredientOf "This relation denotes that an ingredient is part of a cocktail.")
+
 (isa isSweet BinaryPredicate)
 (arity isSweet 1)
 (comment isSweet "This relation denotes that an ingredient is sweet.")
