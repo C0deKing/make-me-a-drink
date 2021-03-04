@@ -145,6 +145,34 @@
      (isa ?zest (ZestOfFn ?fruit))
      (isa ?fruit CitrusFruit))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(<== (isa ?cocktail RumCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Rum))
+
+(<== (isa ?cocktail TequilaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Tequila))
+
+(<== (isa ?cocktail WhiskeyCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Whiskey))
+
+(<== (isa ?cocktail GinCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Gin))
+
+(<== (isa ?cocktail VodkaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Vodka))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; find cocktails that don't have what you don't have
 (<== (makeableCocktail ?cocktail)
      (isa ?cocktail Cocktail)
