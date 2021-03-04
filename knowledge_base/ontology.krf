@@ -9,14 +9,129 @@
 (isa makeCocktail ComplexActionPredicate)
 (arity makeCocktail 0)
 
+;;; Entities ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(isa Daiquiri RumCocktail)
+(isa Mojito RumCocktail)
+(isa MaiTai RumCocktail)
+(isa PinaColada RumCocktail)
+(isa PainKiller RumCocktail)
+(isa Zombie RumCocktail)
+
+(isa Margarita TequilaCocktail)
+(isa Paloma TequilaCocktail)
+(isa TequilaSunrise TequilaCocktail)
+
+(isa Manhattan WhiskeyCocktail)
+(isa OldFashioned WhiskeyCocktail)
+(isa Sazerac WhiskeyCocktail)
+(isa WhiskeySour WhiskeyCocktail)
+(isa MintJulep WhiskeyCocktail)
+
+(isa Negroni GinCocktail)
+(isa French75 GinCocktail)
+(isa Gimlet GinCocktail)
+(isa Bramble GinCocktail)
+(isa TomCollins GinCocktail)
+(isa AviationCocktail GinCocktail)
+(isa SingaporeSling GinCocktail)
+(isa GinMartini GinCocktail)
+
+(isa MoscowMule VodkaCocktail)
+(isa Cosmopolitan VodkaCocktail)
+(isa VodkaMartini VodkaCocktail)
+(isa BloodyMary VodkaCocktail)
+(isa Screwdriver VodkaCocktail)
+(isa WhiteRussian VodkaCocktail)
+(isa LemonDrop VodkaCocktail)
+
+(isa DonJulio TequilaProductName)
+(isa Patron TequilaProductName)
+(isa JoseCuervo TequilaProductName)
+(isa ClaseAzul TequilaProductName)
+(isa ElJimador TequilaProductName)
+(isa CasaNoble TequilaProductName)
+(isa Espolon TequilaProductName)
+(isa Casamigos TequilaProductName)
+(isa Hornitos TequilaProductName)
+(isa Sauza TequilaProductName)
+
+(isa Absolut VodkaProductName)
+(isa GreyGoose VodkaProductName)
+(isa Belvedere VodkaProductName)
+(isa Smirnoff VodkaProductName)
+(isa Svedka VodkaProductName)
+(isa KetelOne VodkaProductName)
+(isa Skyy VodkaProductName)
+(isa Nemiroff VodkaProductName)
+(isa Pinnacle VodkaProductName)
+(isa Ciroc VodkaProductName)
+(isa Stolichnaya VodkaProductName)
+
+(isa Beefeater GinProductName)
+(isa BonbaySapphire GinProductName)
+(isa Hendricks GinProductName)
+(isa Tanqueray GinProductName)
+(isa Botanist GinProductName)
+(isa Aviation GinProductName)
+(isa Monkey47 GinProductName)
+(isa Slipsmith GinProductName)
+(isa Gordons GinProductName)
+(isa GinMare GinProductName)
+(isa Plymouth GinProductName)
+
+(isa Bacardi RumProductName)
+(isa CaptainMorgan RumProductName)
+(isa AppletonEstate RumProductName)
+(isa Diplomatico RumProductName)
+(isa HavanaClub RumProductName)
+(isa Malibu RumProductName)
+(isa DonQ RumProductName)
+(isa Plantation RumProductName)
+(isa TheRealMcCoy RumProductName)
+(isa AppletonEstate RumProductName)
+(isa FlorDeCana RumProductName)
+
+(isa MakersMark WhiskeyProductName)
+(isa ElijahCraig WhiskeyProductName)
+(isa LongBranch WhiskeyProductName)
+(isa JackDaniels WhiskeyProductName)
+(isa JohnnyWalker WhiskeyProductName)
+(isa KnobCreek WhiskeyProductName)
+(isa JamesonIrish WhiskeyProductName)
+(isa BasilHaydens WhiskeyProductName)
+(isa WoodfordReserve WhiskeyProductName)
+(isa BulleitBourbon WhiskeyProductName)
+(isa Fireball WhiskeyProductName)
+
+(isa Cointreau TripleSec)
+(isa Chambord Liqueur)
+(comment Chambord "A blackberry liqueur.")
+
+(isa AngosturaBitters Bitters)
+(isa PeychaudsBitters Bitters)
+(isa OrangeBitters Bitters)
+
+(isa MaraschinoCherry Cherry)
+(isa Aperol Liquor-Drink)
+
+(isa MaraschinoLiqueur Liquor-Drink)
+
 ;;; Collections ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;; (isa TequilaBrandBrand )
-;;; (isa VodkaBrandBrand )
-;;; (isa GinBrandBrand )
-;;; (isa WhiskeyBrand )
-;;; (isa RumBrand )
-;;; (isa WineBrand )
+(isa TequilaProductName ProperNameString)
+(genls TequilaProductName ProductName)
+
+(isa VodkaProductName ProperNameString)
+(genls VodkaProductName ProductName)
+
+(isa GinProductName ProperNameString)
+(genls GinProductName ProductName)
+
+(isa WhiskeyProductName ProperNameString)
+(genls WhiskeyProductName ProductName)
+
+(isa RumProductName ProperNameString)
+(genls RumProductName ProductName)
 
 (isa TequilaCocktail DefaultDisjointEdibleStuffType)
 (genls TequilaCocktail Cocktail)
@@ -38,16 +153,16 @@
 (comment Tequila "A distilled beverage made from blue agave.")
 
 (isa AnejoTequila DefaultDisjointEdibleStuffType)
-(genls AnejoTequila TequilaBrand)
-(comment AnejoTequila "A mature TequilaBrand that must be aged one to three years.")
+(genls AnejoTequila TequilaProductName)
+(comment AnejoTequila "A mature TequilaProductName that must be aged one to three years.")
 
 (isa ReposadoTequila DefaultDisjointEdibleStuffType)
-(genls ReposadoTequila TequilaBrand)
-(comment ReposadoTequila "A TequilaBrand that must be aged two to twelve months.")
+(genls ReposadoTequila TequilaProductName)
+(comment ReposadoTequila "A TequilaProductName that must be aged two to twelve months.")
 
 (isa BlancoTequila DefaultDisjointEdibleStuffType)
 (genls BlancoTequila Liquor-Drink )
-(comment BlancoTequila "A young TequilaBrand that is un-aged.")
+(comment BlancoTequila "A young TequilaProductName that is un-aged.")
 
 (isa Mezcal DefaultDisjointEdibleStuffType)
 (genls Mezcal Liquor-Drink)
@@ -106,7 +221,7 @@
 (comment OrangeLiqueur "A type of sweet, orange-flavored liqueur.")
 
 (isa TripleSec DefaultDisjointEdibleStuffType)
-(genls TripleSec OrangeLiqueuer)
+(genls TripleSec OrangeLiqueur)
 (comment TripleSec "Orange-flavored liqueur made from dried bitter and sweet oranges.")
 
 (isa Wine DefaultDisjointEdibleStuffType)
@@ -323,3 +438,66 @@
 (arg1Isa SimpleSyrupFn DefaultDisjointEdibleStuffType)
 (resultGenl SimpleSyrupFn SimpleSyrup)
 (comment SimpleSyrupFn "This function denotes the simple syrup of an edible food item.")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; if a fruit is a citrus fruit, then it is sour
+(<== (isSour ?fruit)
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit juice comes from a citrus fruit, then it is sour
+(<== (isSour (JuiceOfFn ?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit is a stone fruit, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit StoneFruit))
+
+(<== (isSweet (JuiceOfFn ?fruit))
+     (isa ?fruit StoneFruit))
+
+;;; if a fruit is a berry, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit BerryFruit))
+
+(<== (isSweet (JuiceOfFn ?fruit))
+     (isa ?fruit BerryFruit))
+
+;;; if something is a simple syrup, then it is sweet
+(<== (isSweet ?syrup)
+     (isa ?syrup SimpleSyrup))
+
+;;; if something is a bitters, then it is bitter
+(<== (isBitter ?bitter)
+     (isa ?bitter Bitters))
+
+;;; if an ingredient is a zest, then it is a garnish
+(<== (isGarnish ?zest)
+     (isa ?zest (ZestOfFn ?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(<== (isa ?cocktail RumCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Rum))
+
+(<== (isa ?cocktail TequilaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Tequila))
+
+(<== (isa ?cocktail WhiskeyCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Whiskey))
+
+(<== (isa ?cocktail GinCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Gin))
+
+(<== (isa ?cocktail VodkaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Vodka))

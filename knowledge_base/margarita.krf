@@ -1,0 +1,9 @@
+(in-microtheory MargritaMt)
+(genlMt MakeMeADrinkMt MargaritaMt)
+
+(isa Margarita CocktailDrink)
+
+(ingredientOf Tequila Margarita)
+(ingredientOf OrangeLiqueur Margarita)
+(ingredientOf (JuiceOfFn Lime) Margarita)
+(ingredientOf IceCube Margarita)
