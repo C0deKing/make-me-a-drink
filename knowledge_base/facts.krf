@@ -157,6 +157,7 @@
 (<== (makeableCocktailWithSub ?cocktail ?substitute)
      (isa ?cocktail Cocktail)
      (isSour ?original)
+     (ingredientOf ?original ?cocktail)
      (not(hasIngredient ?original))     ;;; user does not have original sour ingredient
      (isSour ?substitute)
      (hasIngredient ?substitute)        ;;; user does have substitute sour ingredient
