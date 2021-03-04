@@ -1,0 +1,24 @@
+(in-microtheory MakeMeADrinkPlansMt)
+
+
+(preconditionForMethod (true)
+  (methodForAction (makeCocktail)
+    (actionSequence (TheList (doAnnounce "im here!" nil)))))
+
+(preconditionForMethod (true)
+  (methodForAction (tstAgenda)
+    (actionSequence (TheList (doAnnounce "tstagenda" nil)))))
+
+(preconditionForMethod
+ (and   (isSour ?sour) 
+        (isSweet ?sweet) 
+        (isa ?spirit Liquor-Drink))
+ (methodForAction
+  (cocktailGoldenRule)
+  (actionSequence
+   (TheList
+    (doRecord (ist-Information CustomDrinksMt (isa TestDrink Liquor-Drink)))
+    (doRecord (ist-Information CustomDrinksMt (ingredientOf ?sour TestDrink)))
+    (doRecord (ist-Information CustomDrinksMt (ingredientOf ?sweet TestDrink)))
+    (doRecord (ist-Information CustomDrinksMt (ingredientOf ?spirit TestDrink)))
+   ))))
