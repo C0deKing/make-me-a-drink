@@ -5,42 +5,41 @@
 
 ;;; find cocktails that don't have what you don't have
 (<== (makeableCocktail ?cocktail)
-     (isa ?cocktail Cocktail)
-     (not(and(ingredientOf ?ingredient ?cocktail)
-               (not(hasIngredient ?ingredient)))))
+     (isa ?cocktail CocktailDrink)
+     (evaluate ?x
+       (SetDifferenceFn
+         (TheClosedRetrievalSetOf ?y
+           (ingredientOf ?y ?cocktail))
+         (TheClosedRetrievalSetOf ?z (hasIngredient ?z))))
+     (equals ?x (TheSet)))
 
 ;;; for all ingredients in a cocktail, you have that ingredient
-(<== (makeableCocktail ?cocktail)
-     (forAll ?ingredient (and (ingredientOf ?ingredient ?cocktail)
-                              (hasIngredient ?ingredient))))
 
 ;;; for all ingredients in a cocktail, you have that ingredient
-(<== (makeableCocktail ?cocktail)
-     (forAll ?ingredient (ingredientOf ?ingredient ?cocktail))
-     (hasIngredient ?ingredient))
+
 
 ;;; check forall in companions
 
 ;;; find cocktail that can substitute sours
-(<== (makeableCocktailWithSub ?cocktail ?substitute)
-     (isa ?cocktail Cocktail)
-     (isSour ?original)
-     (ingredientOf ?original ?cocktail)
-     (not(hasIngredient ?original))     ;;; user does not have original sour ingredient
-     (isSour ?substitute)
-     (hasIngredient ?substitute)        ;;; user does have substitute sour ingredient
+; (<== (makeableCocktailWithSub ?cocktail ?substitute)
+;      (isa ?cocktail Cocktail)
+;      (isSour ?original)
+;      (ingredientOf ?original ?cocktail)
+;      (not(hasIngredient ?original))     ;;; user does not have original sour ingredient
+;      (isSour ?substitute)
+;      (hasIngredient ?substitute)        ;;; user does have substitute sour ingredient
 
-     (not(and(ingredientOf ?ingredient ?cocktail)      ;;; not quite sure if this can just be copy and pasted... it kind of makes sense to me
-               (not(hasIngredient ?ingredient))))
-     ;;; (not(different ?ingredient ?original))        ;;; I don't think this is necessary
-     )
+;      (not(and(ingredientOf ?ingredient ?cocktail)      ;;; not quite sure if this can just be copy and pasted... it kind of makes sense to me
+;                (not(hasIngredient ?ingredient))))
+;      ;;; (not(different ?ingredient ?original))        ;;; I don't think this is necessary
+;      )
 
-;;; find cocktail that can substitute sweets
-(<== (makeableCocktailWithSub ?cocktail ?substitute)
-     (isa ?cocktail Cocktail)
-     (isSweet ?original)
-     (ingredientOf ?original ?cocktail)
-     (not(hasIngredient ?original))
-     (isSweet ?substitute)
-     (hasIngredient ?substitute)
-     )
+; ;;; find cocktail that can substitute sweets
+; (<== (makeableCocktailWithSub ?cocktail ?substitute)
+;      (isa ?cocktail Cocktail)
+;      (isSweet ?original)
+;      (ingredientOf ?original ?cocktail)
+;      (not(hasIngredient ?original))
+;      (isSweet ?substitute)
+;      (hasIngredient ?substitute)
+;      )

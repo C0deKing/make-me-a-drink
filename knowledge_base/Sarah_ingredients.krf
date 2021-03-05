@@ -9,3 +9,5 @@
 (hasIngredient IceCube)
 (hasIngredient (JuiceOfFn Orange))
 (hasIngredient Lavender)
+(hasIngredient OrangeLiqueur)
+
