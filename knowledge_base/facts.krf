@@ -2,6 +2,59 @@
 (genlMt MakeMeADrinkMt MakeMeADrinkFactsMt)
 
 
+;;; if a liquor is blanco tequila, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor BlancoTequila))
+
+;;; if a liquor is a reposado tequila, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor ReposadoTequila))
+
+;;; if a liquor is a anejo tequila, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor AnejoTequila))
+
+;;; if a liquor is mezcal, then it is a light liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Mezcal))
+
+;;; if a liquor is vodka, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Vodka))
+
+;;; if a liquor is gin, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Gin))
+
+;;; if a liquor is soju, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Soju))
+
+;;; if a liquor is sake, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Sake))
+
+;;; if a liquor is whiskey, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor Whiskey))
+
+;;; if a liquor is whiskey, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor Whiskey))
+
+;;; if a liquor is light rum, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor LightRum))
+
+;;; if a liquor is dark rum, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor DarkRum))
+
+;;; if a liquor is spiced rum, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor SpicedRum))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; if a fruit is a citrus fruit, then it is sour
 (<== (isSour ?fruit)
@@ -65,7 +118,6 @@
      (ingredientOf ?ingredient ?cocktail)
      (isa ?ingredient Vodka))
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; find cocktails that don't have what you don't have
@@ -79,42 +131,8 @@
            ?ingredients))
      (equals ?x (TheSet)))
 
-;;; for all ingredients in a cocktail, you have that ingredient
 
-;;; for all ingredients in a cocktail, you have that ingredient
-
-
-;;; check forall in companions
-
-;;; find cocktail that can substitute sours
-; (<== (makeableCocktailWithSub ?cocktail ?substitute)
-;      (isa ?cocktail Cocktail)
-;      (isSour ?original)
-;      (ingredientOf ?original ?cocktail)
-;      (not(hasIngredient ?original))     ;;; user does not have original sour ingredient
-;      (isSour ?substitute)
-;      (hasIngredient ?substitute)        ;;; user does have substitute sour ingredient
-
-;      (not(and(ingredientOf ?ingredient ?cocktail)      ;;; not quite sure if this can just be copy and pasted... it kind of makes sense to me
-;                (not(hasIngredient ?ingredient))))
-;      ;;; (not(different ?ingredient ?original))        ;;; I don't think this is necessary
-;      )
-
-; ;;; find cocktail that can substitute sweets
-; (<== (makeableCocktailWithSub ?cocktail ?substitute)
-;      (isa ?cocktail Cocktail)
-;      (isSweet ?original)
-;      (ingredientOf ?original ?cocktail)
-;      (not(hasIngredient ?original))
-;      (isSweet ?substitute)
-;      (hasIngredient ?substitute)
-;      )
-
-
-
-
-
-
+;;; work on this
 (<== (CocktailIngredientFn ?x)
     (isa ?x DefaultDisjointEdibleStuffType))
 
@@ -122,6 +140,9 @@
       (evaluate ?ingredients
           (RandomMemberFn
            (TheClosedRetrievalSetOf ?x (cocktailGoldenRatio ?x)))))
+
+;;; for substitutions for all qualities, work on this
+(<== (ObtainableCocktailIngredientFn ?x))
 
 (<== (cocktailGoldenRatio ?ingredients)
     (isa ?spirit Liquor-Drink)
