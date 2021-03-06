@@ -163,7 +163,7 @@
      (not(hasIngredient ?y)))
 
 (<== (cocktailGoldenRatio ?ingredients)
-    (isa ?spirit Liquor-Drink)
+    (genls ?spirit Liquor-Drink)
     (isSweet ?sweet)
     (isSour ?sour)
     (different ?spirit ?sweet ?sour)
