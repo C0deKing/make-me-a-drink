@@ -450,6 +450,10 @@
 (arity CocktailIngredientFn 1)
 (comment CocktailIngredientFn "A function denoting to use the given ingredient")
 
+(isa CocktailInspirationFn UnaryFunction)
+(arity CocktailInspirationFn 1)
+(comment CocktailInspirationFn "A function denoting the inspiring cocktail")
+
 (isa makeMeADrink Predicate)
 (arity makeMeADrink 1)
 (comment makeMeADrink "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
@@ -459,3 +463,7 @@
 (arity cocktailGoldenRatio 1)
 (comment cocktailGoldenRatio "Predicate that evaluates the golden ratio set of ingredients. Takes 1 argument, ?ingredients")
 
+(isa stickToTheClasics Predicate)
+(isa stickToTheClasics CocktailRule)
+(arity stickToTheClasics 1)
+(comment stickToTheClasics "Predicate that evaluates existing cocktail recipes. Takes 1 argument, ?ingredients")
