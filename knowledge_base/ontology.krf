@@ -116,8 +116,8 @@
 (isa Aperol Liquor-Drink)
 
 ; (isa MaraschinoLiqueur Liquor-Drink)
-(isa MaraschinoLiqueur LiqueurFnOf(MaraschinoCherry))
-(isa OrangeLiqueur LiqueurFnOf(Orange))
+(isa MaraschinoLiqueur (LiqueurOfFn MaraschinoCherry))
+(isa OrangeLiqueur (LiqueurOfFn Orange))
 
 ;;; Collections ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -365,7 +365,7 @@
 (comment isDarkLiquor "This relation denotes that a liquor is dark-colored.")
 
 (isa isClearLiquor Predicate)
-(arity isClearLiquor Predicate)
+(arity isClearLiquor 1)
 (comment isClearLiquor "This relation denotes that a liquor is clear-colored.")
 
 (isa isSweet Predicate)
@@ -469,6 +469,7 @@
 (isa CocktailIngredientFn UnaryFunction)
 (arity CocktailIngredientFn 1)
 (comment CocktailIngredientFn "A function denoting to use the given ingredient")
+
 
 (isa CocktailInspirationFn UnaryFunction)
 (arity CocktailInspirationFn 1)
