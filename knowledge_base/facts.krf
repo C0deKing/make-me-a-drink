@@ -153,12 +153,14 @@
            (TheClosedRetrievalSetOf ?x (?ingredientRule ?x)))))
 
 ;;; Make a drink with ingredient rules AND action rule
-(<== (makeMeADrink ?ingredientsAndAction)
+(<== (makeMeADrink ?x)
       (isa ?ingredientRule CocktailIngredientRule)
-      (evaluate ?ingredients
+      (isa ?actionRule CocktailActionRule)
+      (evaluate ?x
           (RandomMemberFn
-           (TheClosedRetrievalSetOf ?x (?ingredientRule ?x))))
-      (shakeCocktail ?ingredients ?ingredientsAndAction))
+           (TheClosedRetrievalSetOf ?x 
+              (and (?ingredientRule ?y)
+              (?actionRule ?y ?x))))))
 
 ;;; for substitutions for all qualities, work on this (sarah)
 ;;; my idea is that you would run (ObtainableCocktailIngredientFn ?ingredientYouNeed ?ingredientYouCanSubstitute) like this
