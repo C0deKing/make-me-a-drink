@@ -466,25 +466,47 @@
 (isa CocktailRule Intangible)
 (comment CocktailRule "A rule of cocktail making")
 
+(isa CocktailIngredientRule Intangible)
+(comment CocktailRule "A rule of cocktail making, that generates ingredients of the cocktail")
+
+(isa CocktailActionRule Intangible)
+(comment CocktailActionRule "A rule of cocktail making, that dictates actions to be taken on the cocktail")
+
 (isa CocktailIngredientFn UnaryFunction)
 (arity CocktailIngredientFn 1)
 (comment CocktailIngredientFn "A function denoting to use the given ingredient")
 
+(isa isCocktailIngredient Predicate)
+(arity isCocktailIngredient 1)
+(comment isCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient")
+
+(isa isShakableCocktailIngredient Predicate)
+(arity isShakableCocktailIngredient 1)
+(comment isShakableCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be shaked")
 
 (isa CocktailInspirationFn UnaryFunction)
 (arity CocktailInspirationFn 1)
 (comment CocktailInspirationFn "A function denoting the inspiring cocktail")
+
+(isa CocktailActionFn UnaryFunction)
+(arity CocktailActionFn 1)
+(comment CocktailActionFn "A function denoting an action to be taken on the cocktail")
 
 (isa makeMeADrink Predicate)
 (arity makeMeADrink 1)
 (comment makeMeADrink "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
 
 (isa cocktailGoldenRatio Predicate)
-(isa cocktailGoldenRatio CocktailRule)
+(isa cocktailGoldenRatio CocktailIngredientRule)
 (arity cocktailGoldenRatio 1)
 (comment cocktailGoldenRatio "Predicate that evaluates the golden ratio set of ingredients. Takes 1 argument, ?ingredients")
 
 (isa stickToTheClasics Predicate)
-(isa stickToTheClasics CocktailRule)
+(isa stickToTheClasics CocktailIngredientRule)
 (arity stickToTheClasics 1)
 (comment stickToTheClasics "Predicate that evaluates existing cocktail recipes. Takes 1 argument, ?ingredients")
+
+(isa shakeCocktail Predicate)
+(isa shakeCocktail CocktailActionRule)
+(arity shakeCocktail 2)
+(comment shakeCocktail "A rule denoting when a cocktail should be shaken. Takes 2 arguments ?rules ?ingredients")
