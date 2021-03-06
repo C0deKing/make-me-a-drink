@@ -1,6 +1,71 @@
 (in-microtheory MakeMeADrinkFactsMt)
 (genlMt MakeMeADrinkMt MakeMeADrinkFactsMt)
 
+
+
+;;; if a fruit is a citrus fruit, then it is sour
+(<== (isSour ?fruit)
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit juice comes from a citrus fruit, then it is sour
+(<== (isSour (JuiceOfFn ?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;; if a fruit is a stone fruit, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit StoneFruit))
+
+(<== (isSweet (JuiceOfFn ?fruit))
+     (isa ?fruit StoneFruit))
+
+;;; if a fruit is a berry, then it is sweet
+(<== (isSweet ?fruit)
+     (isa ?fruit BerryFruit))
+
+(<== (isSweet (JuiceOfFn ?fruit))
+     (isa ?fruit BerryFruit))
+
+;;; if something is a simple syrup, then it is sweet
+(<== (isSweet ?syrup)
+     (isa ?syrup SimpleSyrup))
+
+;;; if something is a bitters, then it is bitter
+(<== (isBitter ?bitter)
+     (isa ?bitter Bitters))
+
+;;; if an ingredient is a zest, then it is a garnish
+(<== (isGarnish ?zest)
+     (isa ?zest (ZestOfFn ?fruit))
+     (isa ?fruit CitrusFruit))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<== (isa ?cocktail RumCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Rum))
+
+(<== (isa ?cocktail TequilaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Tequila))
+
+(<== (isa ?cocktail WhiskeyCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Whiskey))
+
+(<== (isa ?cocktail GinCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Gin))
+
+(<== (isa ?cocktail VodkaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Vodka))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; find cocktails that don't have what you don't have
@@ -44,3 +109,23 @@
 ;      (isSweet ?substitute)
 ;      (hasIngredient ?substitute)
 ;      )
+
+
+
+
+
+
+(<== (CocktailIngredientFn ?x)
+    (isa ?x DefaultDisjointEdibleStuffType))
+
+(<== (makeMeADrink ?ingredients)
+      (evaluate ?ingredients
+          (RandomMemberFn
+           (TheClosedRetrievalSetOf ?x (cocktailGoldenRatio ?x)))))
+
+(<== (cocktailGoldenRatio ?ingredients)
+    (isa ?spirit Liquor-Drink)
+    (isSweet ?sweet)
+    (isSour ?sour)
+    (different ?spirit ?sweet ?sour)
+    (evaluate ?ingredients (TheSet (CocktailIngredientFn ?spirit) (CocktailIngredientFn ?sweet)  (CocktailIngredientFn ?sour))))
