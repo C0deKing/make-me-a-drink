@@ -198,7 +198,9 @@
   (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?ingredientsOnHand (hasIngredient ?ingredientsOnHand)))
   (evaluate ?missing (SetDifferenceFn ?cocktailIngredients ?ingredientsOnHand))
   (equals ?missing (TheSet))
-  (evaluate ?ingredients (SetOrCollectionUnionFn (TheSet (CocktailInspirationFn ?cocktail)) ?cocktailIngredients)))
+  (evaluate ?finalCocktailIngredients (TheClosedRetrievalSetOf ?i (and (elementOf ?z ?cocktailIngredients)
+                                                                      (evaluate ?i (CocktailIngredientFn ?z)))))
+  (evaluate ?ingredients (SetOrCollectionUnionFn (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients)))
 
 (<== (shakeCocktail ?ingredients ?actions)
   (evaluate ?shakableComponents (TheClosedRetrievalSetOf ?x
