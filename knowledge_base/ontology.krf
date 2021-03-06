@@ -338,7 +338,7 @@
 ;;; Predicates ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (isa makeableCocktail Predicate)
-(arity makeableCocktail 1)
+(arity makeableCocktail 2)
 (comment makeableCocktail "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
 
 (isa makeableCocktailWithSub BinaryPredicate)

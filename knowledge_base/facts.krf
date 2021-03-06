@@ -4,13 +4,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; find cocktails that don't have what you don't have
-(<== (makeableCocktail ?cocktail)
+(<== (makeableCocktail ?cocktail ?ingredients)
      (isa ?cocktail CocktailDrink)
+     (evaluate ?ingredients (TheClosedRetrievalSetOf ?ingredients (hasIngredient ?ingredients)))
      (evaluate ?x
        (SetDifferenceFn
          (TheClosedRetrievalSetOf ?y
            (ingredientOf ?y ?cocktail))
-         (TheClosedRetrievalSetOf ?z (hasIngredient ?z))))
+           ?ingredients))
      (equals ?x (TheSet)))
 
 ;;; for all ingredients in a cocktail, you have that ingredient
