@@ -12,6 +12,12 @@ We provide all of the .krf files needed to load the project into companions. The
 - cocktails.krf
 - ingredients.krf
 
+## Generating your own KRF files
+Our project comes with a python script you can run to generate new KRF files based on recipes found on the internet. Follow the below instructions to invoke the script
+
+TODO: @Jonathan please fill in instructions to run
+
+## Evaluating the knowledge Base
 In order to evaluate the knowledge stored in the knowledge base, you can run the following queries in companions
 
 ### To Find Makable Cocktails
@@ -24,3 +30,7 @@ In order to evaluate the knowledge stored in the knowledge base, you can run the
 (makeMeADrink ?instructions)
 ```
 
+### To Find missing ingredients for cocktails you can not make
+```
+(ingredientsToBuyNext ?ingredients ?cocktail)
+```
