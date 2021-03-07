@@ -1,0 +1,7 @@
+(isa AviationCocktail CocktailDrink)
+(ingredientOf Gin AviationCocktail)
+(ingredientOf (liqueurOfFn Maraschino) AviationCocktail)
+(ingredientOf (juiceOfFn Lemon) AviationCocktail)
+(ingredientOf Ice AviationCocktail)
+(ingredientOf MaraschinoCherry AviationCocktail)
+(isGarnish MaraschinoCherry)

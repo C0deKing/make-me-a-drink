@@ -1,0 +1,8 @@
+(isa CosmopolitanCocktail CocktailDrink)
+(ingredientOf Vodka CosmopolitanCocktail)
+(ingredientOf (juiceOfFn Lime) CosmopolitanCocktail)
+(ingredientOf TripleSec CosmopolitanCocktail)
+(ingredientOf (juiceOfFn Cranberry) CosmopolitanCocktail)
+(ingredientOf Ice CosmopolitanCocktail)
+(ingredientOf LimeWedge CosmopolitanCocktail)
+(isGarnish LimeWedge)

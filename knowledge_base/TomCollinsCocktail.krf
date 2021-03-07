@@ -1,0 +1,7 @@
+(isa TomCollinsCocktail CocktailDrink)
+(ingredientOf Ice TomCollinsCocktail)
+(ingredientOf Gin TomCollinsCocktail)
+(ingredientOf (juiceOfFn Lemon) TomCollinsCocktail)
+(ingredientOf SimpleSyrup TomCollinsCocktail)
+(ingredientOf ClubSoda TomCollinsCocktail)
+(ingredientOf LemonWedge TomCollinsCocktail)

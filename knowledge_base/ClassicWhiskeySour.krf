@@ -1,0 +1,7 @@
+(isa ClassicWhiskeySour CocktailDrink)
+(ingredientOf SimpleSyrup ClassicWhiskeySour)
+(ingredientOf (juiceOfFn Lemon) ClassicWhiskeySour)
+(ingredientOf Whiskey ClassicWhiskeySour)
+(ingredientOf Ice ClassicWhiskeySour)
+(ingredientOf MaraschinoCherries ClassicWhiskeySour)
+(isGarnish MaraschinoCherries)

@@ -1,0 +1,6 @@
+(isa GimletCocktail CocktailDrink)
+(ingredientOf Gin GimletCocktail)
+(ingredientOf (juiceOfFn Lime) GimletCocktail)
+(ingredientOf SimpleSyrup GimletCocktail)
+(ingredientOf Ice GimletCocktail)
+(ingredientOf LimeWheel GimletCocktail)

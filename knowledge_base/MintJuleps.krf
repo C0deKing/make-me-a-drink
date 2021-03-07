@@ -1,0 +1,7 @@
+(isa MintJuleps CocktailDrink)
+(ingredientOf Water MintJuleps)
+(ingredientOf WhiteSugar MintJuleps)
+(ingredientOf RoughlyChoppedMintLeaves MintJuleps)
+(ingredientOf KentuckyBourbon MintJuleps)
+(ingredientOf SprigsMintLeaves MintJuleps)
+(isGarnish SprigsMintLeaves)
