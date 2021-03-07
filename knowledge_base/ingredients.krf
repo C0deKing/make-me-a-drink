@@ -1,7 +1,6 @@
 (in-microtheory IngredientsMt)
 (genlMt MakeMeADrinkMt IngredientsMt)
 
-(hasIngredient Tequila)
 (hasIngredient Champagne)
 (hasIngredient Chambord)
 (hasIngredient Lime)
