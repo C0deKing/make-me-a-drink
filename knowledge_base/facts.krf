@@ -1,114 +1,60 @@
 (in-microtheory MakeMeADrinkFactsMt)
 (genlMt MakeMeADrinkMt MakeMeADrinkFactsMt)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(isa Daiquiri RumCocktail)
-(isa Mojito RumCocktail)
-(isa MaiTai RumCocktail)
-(isa PinaColada RumCocktail)
-(isa PainKiller RumCocktail)
-(isa Zombie RumCocktail)
+;;; if a liquor is blanco tequila, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor BlancoTequila))
 
-(isa Margarita TequilaCocktail)
-(isa Paloma TequilaCocktail)
-(isa TequilaSunrise TequilaCocktail)
+;;; if a liquor is a reposado tequila, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor ReposadoTequila))
 
-(isa Manhattan WhiskeyCocktail)
-(isa OldFashioned WhiskeyCocktail)
-(isa Sazerac WhiskeyCocktail)
-(isa WhiskeySour WhiskeyCocktail)
-(isa MintJulep WhiskeyCocktail)
+;;; if a liquor is a anejo tequila, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor AnejoTequila))
 
-(isa Negroni GinCocktail)
-(isa French75 GinCocktail)
-(isa Gimlet GinCocktail)
-(isa Bramble GinCocktail)
-(isa TomCollins GinCocktail)
-(isa Aviation GinCocktail)
-(isa SingaporeSling GinCocktail)
-(isa GinMartini GinCocktail)
+;;; if a liquor is mezcal, then it is a light liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Mezcal))
 
-(isa MoscowMule VodkaCocktail)
-(isa Cosmopolitan VodkaCocktail)
-(isa VodkaMartini VodkaCocktail)
-(isa BloodyMary VodkaCocktail)
-(isa Screwdriver VodkaCocktail)
-(isa WhiteRussian VodkaCocktail)
-(isa LemonDrop VodkaCocktail)
+;;; if a liquor is vodka, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Vodka))
 
-(isa DonJulio TequilaBrand)
-(isa Patron TequilaBrand)
-(isa JoseCuervo TequilaBrand)
-(isa ClaseAzul TequilaBrand)
-(isa ElJimador TequilaBrand)
-(isa CasaNoble TequilaBrand)
-(isa Espolon TequilaBrand)
-(isa Casamigos TequilaBrand)
-(isa Hornitos TequilaBrand)
-(isa SauzaTequilaBrand TequilaBrand)
+;;; if a liquor is gin, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Gin))
 
-(isa Absolut VodkaBrand)
-(isa GreyGoose VodkaBrand)
-(isa Belvedere VodkaBrand)
-(isa Smirnoff VodkaBrand)
-(isa Svedka VodkaBrand)
-(isa KetelOne VodkaBrand)
-(isa Skyy VodkaBrand)
-(isa Nemiroff VodkaBrand)
-(isa Pinnacle VodkaBrand)
-(isa Ciroc VodkaBrand)
-(isa Stolichnaya VodkaBrand)
+;;; if a liquor is soju, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Soju))
 
-(isa Beefeater GinBrand)
-(isa BonbaySapphire GinBrand)
-(isa Hendricks GinBrand)
-(isa Tanqueray GinBrand)
-(isa Botanist GinBrand)
-(isa Aviation GinBrand)
-(isa Monkey47 GinBrand)
-(isa Slipsmith GinBrand)
-(isa Gordons GinBrand)
-(isa GinMare GinBrand)
-(isa Plymouth GinBrand)
+;;; if a liquor is sake, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor Sake))
 
-(isa Bacardi RumBrand)
-(isa CaptainMorgan RumBrand)
-(isa AppletonEstate RumBrand)
-(isa Diplomatico RumBrand)
-(isa HavanaClub RumBrand)
-(isa Malibu RumBrand)
-(isa DonQ RumBrand)
-(isa Plantation RumBrand)
-(isa TheRealMcCoy RumBrand)
-(isa AppletonEstate RumBrand)
-(isa FlorDeCana RumBrand)
+;;; if a liquor is whiskey, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor Whiskey))
 
-(isa MakersMark WhiskeyBrand)
-(isa ElijahCraig WhiskeyBrand)
-(isa LongBranch WhiskeyBrand)
-(isa JackDaniels WhiskeyBrand)
-(isa JohnnyWalker WhiskeyBrand)
-(isa KnobCreek WhiskeyBrand)
-(isa JamesonIrish WhiskeyBrand)
-(isa BasilHaydens WhiskeyBrand)
-(isa WoodfordReserve WhiskeyBrand)
-(isa BulleitBourbon WhiskeyBrand)
-(isa Fireball WhiskeyBrand)
+;;; if a liquor is whiskey, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor Whiskey))
 
-(isa Cointreau TripleSec)
+;;; if a liquor is light rum, then it is a clear liquor
+(<== (isClearLiquor ?liquor)
+     (isa ?liquor LightRum))
 
-(isa AngosturaBitters Bitters)
-(isa PeychaudsBitters Bitters)
-(isa OrangeBitters Bitters)
+;;; if a liquor is dark rum, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor DarkRum))
 
-(isa MaraschinoCherry Cherry)
-(isa Aperol Liquor-Drink)
+;;; if a liquor is spiced rum, then it is a dark liquor
+(<== (isDarkLiquor ?liquor)
+     (isa ?liquor SpicedRum))
 
-(isa MaraschinoLiqueur Liquor-Drink)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; if a fruit is a citrus fruit, then it is sour
 (<== (isSour ?fruit)
@@ -136,6 +82,9 @@
 (<== (isSweet ?syrup)
      (isa ?syrup SimpleSyrup))
 
+(<== (isSweet ?syrup)
+    (equals ?syrup SimpleSyrup))
+
 ;;; if something is a bitters, then it is bitter
 (<== (isBitter ?bitter)
      (isa ?bitter Bitters))
@@ -145,4 +94,163 @@
      (isa ?zest (ZestOfFn ?fruit))
      (isa ?fruit CitrusFruit))
 
-;;; need a rule to connect a liquor brand to the liquor
+(<== (isCocktailIngredient (CocktailIngredientFn ?x))
+      (true))
+
+(<== (isMuddleCocktailIngredient (CocktailIngredientFn ?x))
+    (isa ?x CitrusFruit))
+
+(<== (isShakableCocktailIngredient (CocktailIngredientFn ?x))
+    (isa ?x CitrusFruit))
+
+(<== (isShakableCocktailIngredient (CocktailIngredientFn (JuiceOfFn ?x)))
+    (isa ?x CitrusFruit))
+
+(<== (isLiquorCocktailIngredient (CocktailIngredientFn ?x))
+  (isa ?x Liquor-Drink))
+
+(<== (isLiquorCocktailIngredient (CocktailIngredientFn ?x))
+  (isa ?x (LiqueurOfFn ?y)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(<== (isa ?cocktail RumCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Rum))
+
+(<== (isa ?cocktail TequilaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Tequila))
+
+(<== (isa ?cocktail WhiskeyCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Whiskey))
+
+(<== (isa ?cocktail GinCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Gin))
+
+(<== (isa ?cocktail VodkaCocktail)
+     (isa ?cocktail Cocktail)
+     (ingredientOf ?ingredient ?cocktail)
+     (isa ?ingredient Vodka))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; find cocktails that don't have what you don't have
+(<== (makeableCocktail ?cocktail ?ingredients)
+     (isa ?cocktail CocktailDrink)
+     (evaluate ?ingredients (TheClosedRetrievalSetOf ?ingredients (hasIngredient ?ingredients)))
+     (evaluate ?x
+       (SetDifferenceFn
+         (TheClosedRetrievalSetOf ?y
+           (ingredientOf ?y ?cocktail))
+           ?ingredients))
+     (equals ?x (TheSet)))
+
+(<== (ingredientsToBuyNext ?ingredients ?cocktail)
+    (isa ?cocktail CocktailDrink)
+    (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?x 
+                              (and (ingredientOf ?x ?cocktail)
+                                    (hasIngredient ?x))))
+    (evaluate ?allIngredients (TheClosedRetrievalSetOf ?y (ingredientOf ?y ?cocktail)))
+    (evaluate ?ingredients (SetDifferenceFn ?allIngredients ?ingredientsOnHand))
+    (different ?ingredients (TheSet)))
+                                   
+
+
+;;; work on this (sarah)
+(<== (CocktailIngredientFn ?x)
+    (isa ?x DefaultDisjointEdibleStuffType)
+    (hasIngredient ?x))
+
+;; Make a drink with only ingredient rules - I dont think we will need this
+; (<== (makeMeADrink ?x)
+;       (isa ?ingredientRule CocktailIngredientRule)
+;       (evaluate ?x
+;           (RandomMemberFn
+;            (TheClosedRetrievalSetOf ?i (?ingredientRule ?i)))))
+;;; Make a drink with ingredient rules AND action rule
+(<== (makeMeADrink ?x)
+      (isa ?ingredientRule CocktailIngredientRule)
+      (evaluate ?actionRules (TheClosedRetrievalSetOf ?actionRule (isa ?actionRule CocktailActionRule)))
+      (evaluate ?ingredients
+          (RandomMemberFn
+           (TheClosedRetrievalSetOf ?i 
+              (?ingredientRule ?i))))
+      (evaluate ?actions (SetOfSetsUnionFn 
+              (TheClosedRetrievalSetOf ?a 
+                  (and 
+                    (elementOf ?ar ?actionRules)
+                    (?ar ?ingredients ?a)))))
+      (evaluate ?x (SetOfSetsUnionFn (TheSet ?ingredients ?actions))))
+      
+;;; for substitutions for all qualities, work on this (sarah)
+;;; my idea is that you would run (ObtainableCocktailIngredientFn ?ingredientYouNeed ?ingredientYouCanSubstitute) like this
+;;; (ObtainableCocktailIngredientFn JuiceOfFn(Lime) ?x) and it would return something like JuiceOfFn(Lemon), etc. 
+; These do not upload properly yet - Matt
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isSour ?x)
+;      (isSour ?y)
+;      (not(hasIngredient ?y)))
+
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isSweet ?x)
+;      (isSweet ?y)
+;      (not(hasIngredient ?y)))
+
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isBitter ?x)
+;      (isBitter ?y)
+;      (not(hasIngredient ?y)))
+
+(<== (cocktailGoldenRatio ?ingredients)
+    (genls ?spirit Liquor-Drink)
+    (isSweet ?sweet)
+    (isSour ?sour)
+    (different ?spirit ?sweet ?sour)
+    (hasIngredient ?spirit)
+    (hasIngredient ?sour)
+    (hasIngredient ?sweet)
+    (evaluate ?ingredients (TheSet (CocktailInspirationFn cocktailGoldenRatio) (CocktailIngredientFn ?spirit) (CocktailIngredientFn ?sweet)  (CocktailIngredientFn ?sour))))
+
+(<== (stickToTheClasics ?ingredients)
+  (isa ?cocktail CocktailDrink)
+  (evaluate ?cocktailIngredients (TheClosedRetrievalSetOf ?cocktailIngredients (ingredientOf ?cocktailIngredients ?cocktail)))
+  (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?ingredientsOnHand (hasIngredient ?ingredientsOnHand)))
+  (evaluate ?missing (SetDifferenceFn ?cocktailIngredients ?ingredientsOnHand))
+  (equals ?missing (TheSet))
+  (evaluate ?finalCocktailIngredients (TheClosedRetrievalSetOf ?i (and (elementOf ?z ?cocktailIngredients)
+                                                                      (evaluate ?i (CocktailIngredientFn ?z)))))
+  (evaluate ?ingredients (SetOfSetsUnionFn (TheSet (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients))))
+
+(<== (shakeCocktail ?ingredients ?actions)
+  (evaluate ?shakableComponents (TheClosedRetrievalSetOf ?x
+                (and (elementOf ?x ?ingredients) 
+                     (isShakableCocktailIngredient ?x))))
+  (different ?shakableComponents (TheSet))
+  (evaluate ?actions (TheSet (CocktailActionFn ShakeCocktail))))
+  
+
+(<== (stirCocktail ?ingredients ?actions)
+  (evaluate ?liquorComponents (TheClosedRetrievalSetOf ?x 
+                (and (elementOf ?x ?ingredients)
+                      (isLiquorCocktailIngredient ?x))))
+  (equals (CardinalityFn ?nonLiquirComponents) (CardinalityFn ?ingredients))
+  (evaluate ?actions (TheSet (CocktailActionFn stirCocktail))))
+
+(<== (muddleCocktail ?ingredients ?actions)
+  (evaluate ?components (TheClosedRetrievalSetOf ?x
+                (and (elementOf ?x ?ingredients) 
+                     (isMuddleCocktailIngredient ?x))))
+  (different ?components (TheSet))
+  (isa ?actionRule CocktailActionRule)
+  (evaluate ?actions (TheSet (CocktailIngredientActionFn muddleCocktail ?components))))

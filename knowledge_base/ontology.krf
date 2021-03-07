@@ -1,25 +1,151 @@
 (in-microtheory MakeMeADrinkOntologyMt)
 (genlMt MakeMeADrinkMt MakeMeADrinkOntologyMt)
 
+;;; Methods;;;;
+
+(isa cocktailGoldenRule ComplexActionPredicate)
+(arity cocktailGoldenRule 0)
+
+(isa makeCocktail ComplexActionPredicate)
+(arity makeCocktail 0)
+
+;;; Entities ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (isa Daiquiri RumCocktail)
+; (isa Mojito RumCocktail)
+; (isa MaiTai RumCocktail)
+; (isa PinaColada RumCocktail)
+; (isa PainKiller RumCocktail)
+; (isa Zombie RumCocktail)
+
+; (isa Margarita TequilaCocktail)
+; (isa Paloma TequilaCocktail)
+; (isa TequilaSunrise TequilaCocktail)
+
+; (isa Manhattan WhiskeyCocktail)
+; (isa OldFashioned WhiskeyCocktail)
+; (isa Sazerac WhiskeyCocktail)
+; (isa WhiskeySour WhiskeyCocktail)
+; (isa MintJulep WhiskeyCocktail)
+
+; (isa Negroni GinCocktail)
+; (isa French75 GinCocktail)
+; (isa Gimlet GinCocktail)
+; (isa Bramble GinCocktail)
+; (isa TomCollins GinCocktail)
+; (isa AviationCocktail GinCocktail)
+; (isa SingaporeSling GinCocktail)
+; (isa GinMartini GinCocktail)
+
+; (isa MoscowMule VodkaCocktail)
+; (isa Cosmopolitan VodkaCocktail)
+; (isa VodkaMartini VodkaCocktail)
+; (isa BloodyMary VodkaCocktail)
+; (isa Screwdriver VodkaCocktail)
+; (isa WhiteRussian VodkaCocktail)
+; (isa LemonDrop VodkaCocktail)
+
+(isa DonJulio TequilaProductName)
+(isa Patron TequilaProductName)
+(isa JoseCuervo TequilaProductName)
+(isa ClaseAzul TequilaProductName)
+(isa ElJimador TequilaProductName)
+(isa CasaNoble TequilaProductName)
+(isa Espolon TequilaProductName)
+(isa Casamigos TequilaProductName)
+(isa Hornitos TequilaProductName)
+(isa Sauza TequilaProductName)
+
+(isa Absolut VodkaProductName)
+(isa GreyGoose VodkaProductName)
+(isa Belvedere VodkaProductName)
+(isa Smirnoff VodkaProductName)
+(isa Svedka VodkaProductName)
+(isa KetelOne VodkaProductName)
+(isa Skyy VodkaProductName)
+(isa Nemiroff VodkaProductName)
+(isa Pinnacle VodkaProductName)
+(isa Ciroc VodkaProductName)
+(isa Stolichnaya VodkaProductName)
+
+(isa Beefeater GinProductName)
+(isa BonbaySapphire GinProductName)
+(isa Hendricks GinProductName)
+(isa Tanqueray GinProductName)
+(isa Botanist GinProductName)
+(isa Aviation GinProductName)
+(isa Monkey47 GinProductName)
+(isa Slipsmith GinProductName)
+(isa Gordons GinProductName)
+(isa GinMare GinProductName)
+(isa Plymouth GinProductName)
+
+(isa Bacardi RumProductName)
+(isa CaptainMorgan RumProductName)
+(isa AppletonEstate RumProductName)
+(isa Diplomatico RumProductName)
+(isa HavanaClub RumProductName)
+(isa Malibu RumProductName)
+(isa DonQ RumProductName)
+(isa Plantation RumProductName)
+(isa TheRealMcCoy RumProductName)
+(isa AppletonEstate RumProductName)
+(isa FlorDeCana RumProductName)
+
+(isa MakersMark WhiskeyProductName)
+(isa ElijahCraig WhiskeyProductName)
+(isa LongBranch WhiskeyProductName)
+(isa JackDaniels WhiskeyProductName)
+(isa JohnnyWalker WhiskeyProductName)
+(isa KnobCreek WhiskeyProductName)
+(isa JamesonIrish WhiskeyProductName)
+(isa BasilHaydens WhiskeyProductName)
+(isa WoodfordReserve WhiskeyProductName)
+(isa BulleitBourbon WhiskeyProductName)
+(isa Fireball WhiskeyProductName)
+
+(isa Cointreau TripleSec)
+(isa Chambord Liqueur)
+(comment Chambord "A blackberry liqueur.")
+
+(isa AngosturaBitters Bitters)
+(isa PeychaudsBitters Bitters)
+(isa OrangeBitters Bitters)
+
+(isa MaraschinoCherry Cherry)
+
+(isa Aperol Liquor-Drink)
+
+; (isa MaraschinoLiqueur Liquor-Drink)
+(isa MaraschinoLiqueur (LiqueurOfFn MaraschinoCherry))
+(isa OrangeLiqueur (LiqueurOfFn Orange))
+
 ;;; Collections ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;; (isa TequilaBrandBrand )
-;;; (isa VodkaBrandBrand )
-;;; (isa GinBrandBrand )
-;;; (isa WhiskeyBrand )
-;;; (isa RumBrand )
-;;; (isa WineBrand )
+(isa TequilaProductName ProperNameString)
+(genls TequilaProductName ProductName)
 
-(isa TequilaCocktail SpatiallyDisjointObjectType)
+(isa VodkaProductName ProperNameString)
+(genls VodkaProductName ProductName)
+
+(isa GinProductName ProperNameString)
+(genls GinProductName ProductName)
+
+(isa WhiskeyProductName ProperNameString)
+(genls WhiskeyProductName ProductName)
+
+(isa RumProductName ProperNameString)
+(genls RumProductName ProductName)
+
+(isa TequilaCocktail DefaultDisjointEdibleStuffType)
 (genls TequilaCocktail Cocktail)
 
-(isa VodkaCocktail SpatiallyDisjointObjectType)
+(isa VodkaCocktail DefaultDisjointEdibleStuffType)
 (genls VodkaCocktail Cocktail)
 
-(isa GinCocktail SpatiallyDisjointObjectType)
+(isa GinCocktail DefaultDisjointEdibleStuffType)
 (genls GinCocktail Cocktail)
 
-(isa WhiskeyCocktail SpatiallyDisjointObjectType)
+(isa WhiskeyCocktail DefaultDisjointEdibleStuffType)
 (genls WhiskeyCocktail Cocktail)
 
 (isa RumCocktail SpatiallyDisjointObjectType)
@@ -30,16 +156,16 @@
 (comment Tequila "A distilled beverage made from blue agave.")
 
 (isa AnejoTequila DefaultDisjointEdibleStuffType)
-(genls AnejoTequila TequilaBrand)
-(comment AnejoTequila "A mature TequilaBrand that must be aged one to three years.")
+(genls AnejoTequila TequilaProductName)
+(comment AnejoTequila "A mature TequilaProductName that must be aged one to three years.")
 
 (isa ReposadoTequila DefaultDisjointEdibleStuffType)
-(genls ReposadoTequila TequilaBrand)
-(comment ReposadoTequila "A TequilaBrand that must be aged two to twelve months.")
+(genls ReposadoTequila TequilaProductName)
+(comment ReposadoTequila "A TequilaProductName that must be aged two to twelve months.")
 
 (isa BlancoTequila DefaultDisjointEdibleStuffType)
 (genls BlancoTequila Liquor-Drink )
-(comment BlancoTequila "A young TequilaBrand that is un-aged.")
+(comment BlancoTequila "A young TequilaProductName that is un-aged.")
 
 (isa Mezcal DefaultDisjointEdibleStuffType)
 (genls Mezcal Liquor-Drink)
@@ -77,6 +203,10 @@
 (genls LightRum Rum)
 (comment LightRum "A type of rum with a light taste and clear color.")
 
+(isa SpicedRum DefaultDisjointEdibleStuffType)
+(genls SpicedRum Rum)
+(comment Spicedrum "A type of rum known for its dark color and more robust flavor.")
+
 (isa Soju DefaultDisjointEdibleStuffType)
 (genls Soju Liquor-Drink)
 (comment Soju "A distilled beverage made in Korea using rice, wheat or barley.")
@@ -93,13 +223,13 @@
 (genls Liqueur Liquor-Drink)
 (comment Liqueur "A strong, sweet alcoholic liquor typically containing additionalflavorings.")
 
-(isa OrangeLiqueur DefaultDisjointEdibleStuffType)
-(genls OrangeLiqueur Liqueur)
-(comment OrangeLiqueur "A type of sweet, orange-flavored liqueur.")
+; (isa OrangeLiqueur DefaultDisjointEdibleStuffType)
+; (genls OrangeLiqueur Liqueur)
+; (comment OrangeLiqueur "A type of sweet, orange-flavored liqueur.")
 
-(isa TripleSec DefaultDisjointEdibleStuffType)
-(genls TripleSec OrangeLiqueuer)
-(comment TripleSec "Orange-flavored liqueur made from dried bitter and sweet oranges.")
+; (isa TripleSec DefaultDisjointEdibleStuffType)
+; (genls TripleSec OrangeLiqueur)
+; (comment TripleSec "Orange-flavored liqueur made from dried bitter and sweet oranges.")
 
 (isa Wine DefaultDisjointEdibleStuffType)
 (genls Wine AlcoholicBeverage)
@@ -161,75 +291,86 @@
 (genls Bitters LiquidTangibleThing)
 (comment Bitters "A bitter alcoholic additive made using botanical matter.")
 
-(isa CitrusFruit SpatiallyDisjointObjectType)
+(isa CitrusFruit DefaultDisjointEdibleStuffType)
 (genls CitrusFruit Fruit)
 (comment CitrusFruit "A group of fruits belonGinBrandg to the Citrus genus.")
 
-(isa BerryFruit SpatiallyDisjointObjectType)
+(isa BerryFruit DefaultDisjointEdibleStuffType)
 (genls BerryFruit Fruit)
 (comment BerryFruit "A small, pulpy fruit with no pit that is produced by a single flower containing one ovary.")
 
-(isa StoneFruit SpatiallyDisjointObjectType)
+(isa StoneFruit DefaultDisjointEdibleStuffType)
 (genls StoneFruit Fruit)
 (comment StoneFruit "A fruit in which the outer fleshy part surrounds a single hardenedseed.")
 
-(isa Lemon SpatiallyDisjointObjectType)
-(genls Lemon CitrusFruit)
+(isa Lemon CitrusFruit)
 (comment Lemon "A yellow, citrus fruit known for its sour taste.")
 
-(isa Lime SpatiallyDisjointObjectType)
-(genls Lime CitrusFruit)
+(isa Lime CitrusFruit)
 (comment Lime "A green citrus fruit known for its sour taste.")
 
-(isa Orange SpatiallyDisjointObjectType)
-(genls Orange CitrusFruit)
+(isa Orange CitrusFruit)
 (comment Orange "An orange, citrus fruit that can be sweet or bitter depending on theregion it is grown in.")
 
-(isa Grapefruit SpatiallyDisjointObjectType)
-(genls Grapefruit CitrusFruit)
+(isa Grapefruit CitrusFruit)
 (comment Grapefruit "A tropical citrus fruit known for its sweet and sour taste.")
 
-(isa Blueberry SpatiallyDisjointObjectType)
-(genls Blueberry BerryFruit)
+(isa Blueberry BerryFruit)
 (comment Blueberry "A blue or purple berry that come from perennial flowering plants.")
 
-(isa Cranberry SpatiallyDisjointObjectType)
-(genls Cranberry BerryFruit)
+(isa Cranberry BerryFruit)
 (comment Cranberry "A red berry that comes from evergreen dwarf shrubs.")
 
-(isa Peach SpatiallyDisjointObjectType)
-(genls Peach StoneFruit)
+(isa Peach StoneFruit)
 (comment Peach "A juicy fruit known for its sweet taste.")
 
-(isa Mango SpatiallyDisjointObjectType)
-(genls Mango StoneFruit)
+(isa Mango StoneFruit)
 (comment Mango "A stone fruit grown on a flowering plant tree in the tropics.")
 
-(isa Cherry SpatiallyDisjointObjectType)
-(genls Cherry StoneFruit)
+(isa Cherry StoneFruit)
 (comment Cherry "A stone fruit grown on trees known for its sour and sweet taste.")
 
-(isa Herb SpatiallyDisjointObjectType)
-(genls Herb PlantBLO)
+(isa Herb PlantBLO)
 (comment Herb "A plant with savory and aromatic properties often used in cooking and cocktails.")
 
-(isa Mint SpatiallyDisjointObjectType)
-(genls Mint Herb)
+(isa Mint Herb)
 (comment Mint "A plant that belongs to the Lamiaceae family known for its refreshing taste.")
 
-(isa Lavender SpatiallyDisjointObjectType)
-(genls Lavender Herb)
+(isa Lavender Herb)
 (comment Lavender "A flowering plant belonGinBrandg to the mint family.")
 
-(isa Tomato DefaultDisjointEdibleStuffType)
-(genls Tomato Vegetable-Food)
+(isa Tomato Vegetable-Food)
 (comment Tomato "An edible red berry from a tomato plant.")
 
 ;;; Predicates ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(isa makeableCocktail Predicate)
+(arity makeableCocktail 2)
+(comment makeableCocktail "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
+
+(isa ingredientsToBuyNext Predicate)
+(arity ingredientsToBuyNext 2)
+(comment ingredientsToBuyNext "This relation denotes the next ingredients that you should try to get to unlock more cocktails")
+
+(isa makeableCocktailWithSub BinaryPredicate)
+(arity makeableCocktailWithSub 2)
+(comment makeableCocktailWithSub "This relation denotes that a cocktail is makeable but with a single substitution.")
+
 (isa ingredientOf BinaryPredicate)
 (arity ingredientOf 2)
 (comment ingredientOf "This relation denotes that an ingredient is part of a cocktail.")
+
+(isa hasIngredient Predicate)
+(arity hasIngredient 1)
+(comment hasIngredient "This relation denotes that the user has an ingredient.")
+
+(isa isDarkLiquor Predicate)
+(arity isDarkLiquor 1)
+(comment isDarkLiquor "This relation denotes that a liquor is dark-colored.")
+
+(isa isClearLiquor Predicate)
+(arity isClearLiquor 1)
+(comment isClearLiquor "This relation denotes that a liquor is clear-colored.")
 
 (isa isSweet Predicate)
 (arity isSweet 1)
@@ -285,6 +426,11 @@
 (arg1Isa ZestOfFn DefaultDisjointEdibleStuffType)
 (comment ZestOfFn "This function denotes the zest of a fruit or vegetable.")
 
+(isa LiqueurOfFn UnaryFunction)
+(arity LiqueurOfFn 1)
+(arg1Isa LiqueurOfFn DefaultDisjointEdibleStuffType)
+(comment LiqueurOfFn "This function denotes the liqueur of an edible item.")
+
 (isa MuddledFn UnaryFunction)
 ;;; (genls MuddledFn )
 (arity MuddledFn 1)
@@ -316,3 +462,78 @@
 (arg1Isa SimpleSyrupFn DefaultDisjointEdibleStuffType)
 (resultGenl SimpleSyrupFn SimpleSyrup)
 (comment SimpleSyrupFn "This function denotes the simple syrup of an edible food item.")
+
+;;; Section for matt
+(isa CocktailInstruction Intangible)
+(comment CocktailInstruction "A Single part of building a cocktail. Dynamically generated by MakeMeADrinkPlansMt")
+
+(isa CocktailRule Intangible)
+(comment CocktailRule "A rule of cocktail making")
+
+(isa CocktailIngredientRule Intangible)
+(comment CocktailRule "A rule of cocktail making, that generates ingredients of the cocktail")
+
+(isa CocktailActionRule Intangible)
+(comment CocktailActionRule "A rule of cocktail making, that dictates actions to be taken on the cocktail")
+
+(isa CocktailIngredientFn UnaryFunction)
+(arity CocktailIngredientFn 1)
+(comment CocktailIngredientFn "A function denoting to use the given ingredient")
+
+(isa isCocktailIngredient Predicate)
+(arity isCocktailIngredient 1)
+(comment isCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient")
+
+(isa isShakableCocktailIngredient Predicate)
+(arity isShakableCocktailIngredient 1)
+(comment isShakableCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be shaked")
+
+(isa isMuddleCocktailIngredient Predicate)
+(arity isMuddleCocktailIngredient 1)
+(comment isMuddleCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be muddled")
+
+(isa isLiquorCocktailIngredient Predicate)
+(arity isLiquorCocktailIngredient 1)
+(comment isLiquorCocktailIngredient "A predicate denoting whether an entity is a liquor cocktail ingredient")
+
+(isa CocktailInspirationFn UnaryFunction)
+(arity CocktailInspirationFn 1)
+(comment CocktailInspirationFn "A function denoting the inspiring cocktail")
+
+(isa CocktailActionFn UnaryFunction)
+(arity CocktailActionFn 1)
+(comment CocktailActionFn "A function denoting an action to be taken on the cocktail")
+
+(isa CocktailIngredientActionFn BinaryFunction)
+(arity CocktailIngredientActionFn 2)
+(comment CocktailIngredientActionFn "A function denoting an action to be taken on and ingredient in a cocktail")
+
+(isa makeMeADrink Predicate)
+(arity makeMeADrink 1)
+(comment makeMeADrink "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
+
+(isa cocktailGoldenRatio Predicate)
+(isa cocktailGoldenRatio CocktailIngredientRule)
+(arity cocktailGoldenRatio 1)
+(comment cocktailGoldenRatio "Predicate that evaluates the golden ratio set of ingredients. Takes 1 argument, ?ingredients")
+
+(isa stickToTheClasics Predicate)
+(isa stickToTheClasics CocktailIngredientRule)
+(arity stickToTheClasics 1)
+(comment stickToTheClasics "Predicate that evaluates existing cocktail recipes. Takes 1 argument, ?ingredients")
+
+(isa shakeCocktail Predicate)
+(isa shakeCocktail CocktailActionRule)
+(arity shakeCocktail 2)
+(comment shakeCocktail "A rule denoting when a cocktail should be shaken. Takes 2 arguments ?rules ?ingredients")
+
+
+(isa stirCocktail Predicate)
+(isa stirCocktail CocktailActionRule)
+(arity stirCocktail 2)
+(comment stirCocktail "A rule denoting when a cocktail should be stirred. Takes 2 arguments ?rules ?ingredients")
+
+(isa muddleCocktail Predicate)
+(isa muddleCocktail CocktailActionRule)
+(arity muddleCocktail 2)
+(comment muddleCocktail "A rule denoting when a cocktail should be muddled. Takes 2 arguments ?rules ?ingredients")
