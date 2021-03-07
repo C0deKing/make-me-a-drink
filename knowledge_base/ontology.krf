@@ -484,6 +484,14 @@
 (arity isShakableCocktailIngredient 1)
 (comment isShakableCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be shaked")
 
+(isa isMuddleCocktailIngredient Predicate)
+(arity isMuddleCocktailIngredient 1)
+(comment isMuddleCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be muddled")
+
+(isa isLiquorCocktailIngredient Predicate)
+(arity isLiquorCocktailIngredient 1)
+(comment isLiquorCocktailIngredient "A predicate denoting whether an entity is a liquor cocktail ingredient")
+
 (isa CocktailInspirationFn UnaryFunction)
 (arity CocktailInspirationFn 1)
 (comment CocktailInspirationFn "A function denoting the inspiring cocktail")
@@ -491,6 +499,10 @@
 (isa CocktailActionFn UnaryFunction)
 (arity CocktailActionFn 1)
 (comment CocktailActionFn "A function denoting an action to be taken on the cocktail")
+
+(isa CocktailIngredientActionFn BinaryFunction)
+(arity CocktailIngredientActionFn 2)
+(comment CocktailIngredientActionFn "A function denoting an action to be taken on and ingredient in a cocktail")
 
 (isa makeMeADrink Predicate)
 (arity makeMeADrink 1)
@@ -510,3 +522,14 @@
 (isa shakeCocktail CocktailActionRule)
 (arity shakeCocktail 2)
 (comment shakeCocktail "A rule denoting when a cocktail should be shaken. Takes 2 arguments ?rules ?ingredients")
+
+
+(isa stirCocktail Predicate)
+(isa stirCocktail CocktailActionRule)
+(arity stirCocktail 2)
+(comment stirCocktail "A rule denoting when a cocktail should be stirred. Takes 2 arguments ?rules ?ingredients")
+
+(isa muddleCocktail Predicate)
+(isa muddleCocktail CocktailActionRule)
+(arity muddleCocktail 2)
+(comment muddleCocktail "A rule denoting when a cocktail should be muddled. Takes 2 arguments ?rules ?ingredients")
