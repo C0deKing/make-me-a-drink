@@ -113,6 +113,7 @@
   (isa ?x (LiqueurOfFn ?y)))
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (<== (isa ?cocktail RumCocktail)
@@ -213,14 +214,16 @@
 ;      (not(hasIngredient ?y)))
 
 (<== (cocktailGoldenRatio ?ingredients)
-    (genls ?spirit Liquor-Drink)
+    (genls ?spirit1 Liquor-Drink)
+    (genls ?spirit2 Liquor-Drink)
     (isSweet ?sweet)
     (isSour ?sour)
-    (different ?spirit ?sweet ?sour)
+    (different ?spirit1 ?sweet ?sour)
+    (different ?spirit2 ?sweet ?sour)
     (hasIngredient ?spirit)
     (hasIngredient ?sour)
     (hasIngredient ?sweet)
-    (evaluate ?ingredients (TheSet (CocktailInspirationFn cocktailGoldenRatio) (CocktailIngredientFn ?spirit) (CocktailIngredientFn ?sweet)  (CocktailIngredientFn ?sour))))
+    (evaluate ?ingredients (TheSet (CocktailInspirationFn cocktailGoldenRatio) (CocktailIngredientFn ?spirit1) (CocktailIngredientFn ?spirit2) (CocktailIngredientFn ?sweet)  (CocktailIngredientFn ?sour))))
 
 (<== (stickToTheClasics ?ingredients)
   (isa ?cocktail CocktailDrink)

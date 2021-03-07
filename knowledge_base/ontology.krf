@@ -480,6 +480,7 @@
 (arity CocktailIngredientFn 1)
 (comment CocktailIngredientFn "A function denoting to use the given ingredient")
 
+
 (isa isCocktailIngredient Predicate)
 (arity isCocktailIngredient 1)
 (comment isCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient")
