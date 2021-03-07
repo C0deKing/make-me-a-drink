@@ -348,6 +348,10 @@
 (arity makeableCocktail 2)
 (comment makeableCocktail "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
 
+(isa ingredientsToBuyNext Predicate)
+(arity ingredientsToBuyNext 2)
+(comment ingredientsToBuyNext "This relation denotes the next ingredients that you should try to get to unlock more cocktails")
+
 (isa makeableCocktailWithSub BinaryPredicate)
 (arity makeableCocktailWithSub 2)
 (comment makeableCocktailWithSub "This relation denotes that a cocktail is makeable but with a single substitution.")

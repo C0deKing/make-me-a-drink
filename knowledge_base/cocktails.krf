@@ -1,10 +1,17 @@
-(in-microtheory AviationMt)
+(in-microtheory CocktailMt)
+(genlMt MakeMeADrinkMt CocktailMt)
 
+; Aviation
 (isa AviationCocktail CocktailDrink)
-
 (ingredientOf Gin AviationCocktail)
 (ingredientOf MaraschinoLiqueur AviationCocktail)
 (ingredientOf (JuiceOfFn Lemon) AviationCocktail)
 (ingredientOf IceCube AviationCocktail)
 (ingredientOf MaraschinoCherry AviationCocktail)
 
+; Margarita
+(isa Margarita CocktailDrink)
+(ingredientOf Tequila Margarita)
+(ingredientOf OrangeLiqueur Margarita)
+(ingredientOf (JuiceOfFn Lime) Margarita)
+(ingredientOf IceCube Margarita)

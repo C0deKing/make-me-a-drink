@@ -153,6 +153,17 @@
            ?ingredients))
      (equals ?x (TheSet)))
 
+(<== (ingredientsToBuyNext ?ingredients ?cocktail)
+    (isa ?cocktail CocktailDrink)
+    (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?x 
+                              (and (ingredientOf ?x ?cocktail)
+                                    (hasIngredient ?x))))
+    (evaluate ?allIngredients (TheClosedRetrievalSetOf ?y (ingredientOf ?y ?cocktail)))
+    (evaluate ?ingredients (SetDifferenceFn ?allIngredients ?ingredientsOnHand))
+    (different ?ingredients (TheSet)))
+                                   
+
+
 ;;; work on this (sarah)
 (<== (CocktailIngredientFn ?x)
     (isa ?x DefaultDisjointEdibleStuffType)
