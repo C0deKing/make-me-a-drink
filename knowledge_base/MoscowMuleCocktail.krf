@@ -2,7 +2,7 @@
 (genlMt MakeMeADrinkMt IngredientsMt)
 (isa MoscowMuleCocktail CocktailDrink)
 (ingredientOf Vodka MoscowMuleCocktail)
-(ingredientOf (juiceOfFn Lime) MoscowMuleCocktail)
+(ingredientOf (JuiceOfFn Lime) MoscowMuleCocktail)
 (ingredientOf Ice MoscowMuleCocktail)
 (ingredientOf GingerBeer MoscowMuleCocktail)
 (ingredientOf LimeWedge MoscowMuleCocktail)

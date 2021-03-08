@@ -1,4 +1,0 @@
-(isa WhiskeyGingerCocktail CocktailDrink)
-(ingredientOf Ice WhiskeyGingerCocktail)
-(ingredientOf RyeWhiskey WhiskeyGingerCocktail)
-(ingredientOf GingerAle WhiskeyGingerCocktail)
