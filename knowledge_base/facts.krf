@@ -1,6 +1,11 @@
 (in-microtheory MakeMeADrinkFactsMt)
 (genlMt MakeMeADrinkMt MakeMeADrinkFactsMt)
 
+(<== (hasIngredient LimeWheel) 
+     (hasIngredient Lime))
+
+(<== (hasIngredient MaraschinoCherries)
+     (hasIngredient MaraschinoCherry))
 
 ;;; if a liquor is blanco tequila, then it is a clear liquor
 (<== (isClearLiquor ?liquor)
