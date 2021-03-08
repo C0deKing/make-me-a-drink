@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa ClassicWhiskeySour CocktailDrink)
 (ingredientOf SimpleSyrup ClassicWhiskeySour)
 (ingredientOf (juiceOfFn Lemon) ClassicWhiskeySour)

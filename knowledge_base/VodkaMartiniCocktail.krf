@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa VodkaMartiniCocktail CocktailDrink)
 (ingredientOf Vodka VodkaMartiniCocktail)
 (ingredientOf DryVermouth VodkaMartiniCocktail)

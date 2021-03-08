@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa CosmopolitanCocktail CocktailDrink)
 (ingredientOf Vodka CosmopolitanCocktail)
 (ingredientOf (juiceOfFn Lime) CosmopolitanCocktail)

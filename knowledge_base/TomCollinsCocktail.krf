@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa TomCollinsCocktail CocktailDrink)
 (ingredientOf Ice TomCollinsCocktail)
 (ingredientOf Gin TomCollinsCocktail)

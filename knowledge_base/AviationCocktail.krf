@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa AviationCocktail CocktailDrink)
 (ingredientOf Gin AviationCocktail)
 (ingredientOf (liqueurOfFn Maraschino) AviationCocktail)

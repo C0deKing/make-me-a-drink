@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa MintJuleps CocktailDrink)
 (ingredientOf Water MintJuleps)
 (ingredientOf WhiteSugar MintJuleps)

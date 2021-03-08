@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa MoscowMuleCocktail CocktailDrink)
 (ingredientOf Vodka MoscowMuleCocktail)
 (ingredientOf (juiceOfFn Lime) MoscowMuleCocktail)

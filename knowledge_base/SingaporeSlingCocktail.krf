@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa SingaporeSlingCocktail CocktailDrink)
 (ingredientOf Ice SingaporeSlingCocktail)
 (ingredientOf Gin SingaporeSlingCocktail)

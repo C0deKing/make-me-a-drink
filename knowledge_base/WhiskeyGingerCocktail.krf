@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa WhiskeyGingerCocktail CocktailDrink)
 (ingredientOf Ice WhiskeyGingerCocktail)
 (ingredientOf RyeWhiskey WhiskeyGingerCocktail)

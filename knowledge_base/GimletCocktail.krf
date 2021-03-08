@@ -1,3 +1,5 @@
+(in-microtheory IngredientsMt)
+(genlMt MakeMeADrinkMt IngredientsMt)
 (isa GimletCocktail CocktailDrink)
 (ingredientOf Gin GimletCocktail)
 (ingredientOf (juiceOfFn Lime) GimletCocktail)
