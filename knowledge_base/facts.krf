@@ -7,6 +7,9 @@
 (<== (hasIngredient MaraschinoCherries)
      (hasIngredient MaraschinoCherry))
 
+(<== (hasIngredient Olives)
+     (hasIngredient Olive))
+
 ;;; if a liquor is blanco tequila, then it is a clear liquor
 (<== (isClearLiquor ?liquor)
      (isa ?liquor BlancoTequila))
