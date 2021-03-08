@@ -420,6 +420,16 @@
 (resultGenl JuiceOfFn Juice)
 (comment JuiceOfFn "This function denotes the juice of a fruit or vegetable.")
 
+(isa BittersOfFn UnaryFunction)
+(arity BittersOfFn 1)
+(arg1Isa BittersOfFn Bitters)
+(comment BittersOfFn "This function denotes the bitters of a fruit or vegetable")
+
+(isa SyrupOfFn UnaryFunction)
+(arity SyrupOfFn 1)
+(arg1Isa SyrupOfFn DefaultDisjointEdibleStuffType)
+(comment SyrupOfFn "This function denotes the syrup of a fruit or vegetable")
+
 (isa ZestOfFn UnaryFunction)
 ;;; (genls ZestOfFn )
 (arity ZestOfFn 1)

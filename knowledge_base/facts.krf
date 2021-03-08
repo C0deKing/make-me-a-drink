@@ -85,6 +85,9 @@
 (<== (isSweet ?syrup)
     (equals ?syrup SimpleSyrup))
 
+(<== (isSweet (SyrupOfFn ?syrup))
+     (true))
+
 ;;; if something is a bitters, then it is bitter
 (<== (isBitter ?bitter)
      (isa ?bitter Bitters))
