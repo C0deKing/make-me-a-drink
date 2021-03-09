@@ -7,6 +7,9 @@
 (<== (hasIngredient MaraschinoCherries)
      (hasIngredient MaraschinoCherry))
 
+(<== (hasIngredient MaraschinoLiqueur)
+     (hasIngredient (LiqueurOfFn Maraschino)))
+
 (<== (hasIngredient Olives)
      (hasIngredient Olive))
 
@@ -156,7 +159,7 @@
 ;;; find cocktails that don't have what you don't have
 (<== (makeableCocktail ?cocktail ?ingredients)
      (isa ?cocktail CocktailDrink)
-     (evaluate ?ingredients (TheClosedRetrievalSetOf ?ingredients (hasIngredient ?ingredients)))
+     (evaluate ?ingredients (TheClosedRetrievalSetOf ?i (hasIngredient ?i)))
      (evaluate ?x
        (SetDifferenceFn
          (TheClosedRetrievalSetOf ?y
@@ -205,26 +208,26 @@
 ;;; my idea is that you would run (ObtainableCocktailIngredientFn ?ingredientYouNeed ?ingredientYouCanSubstitute) like this
 ;;; (ObtainableCocktailIngredientFn JuiceOfFn(Lime) ?x) and it would return something like JuiceOfFn(Lemon), etc. 
 ; These do not upload properly yet - Matt
-(<== (ObtainableCocktailIngredientFn ?y ?x)
-     (hasIngredient ?x)
-     (isSour ?x)
-     (isSour ?y)
-     (different ?x ?y)
-     (not(hasIngredient ?y)))
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isSour ?x)
+;      (isSour ?y)
+;      (different ?x ?y)
+;      (not(hasIngredient ?y)))
 
-(<== (ObtainableCocktailIngredientFn ?y ?x)
-     (hasIngredient ?x)
-     (isSweet ?x)
-     (isSweet ?y)
-     (different ?x ?y)
-     (not(hasIngredient ?y)))
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isSweet ?x)
+;      (isSweet ?y)
+;      (different ?x ?y)
+;      (not(hasIngredient ?y)))
 
-(<== (ObtainableCocktailIngredientFn ?y ?x)
-     (hasIngredient ?x)
-     (isBitter ?x)
-     (isBitter ?y)
-     (different ?x ?y)
-     (not(hasIngredient ?y)))
+; (<== (ObtainableCocktailIngredientFn ?y ?x)
+;      (hasIngredient ?x)
+;      (isBitter ?x)
+;      (isBitter ?y)
+;      (different ?x ?y)
+;      (not(hasIngredient ?y)))
 
 (<== (cocktailGoldenRatio ?ingredients)
     (genls ?spirit Liquor-Drink)
@@ -247,16 +250,16 @@
   (evaluate ?ingredients (SetOfSetsUnionFn (TheSet (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients))))
 
 ;;; classics cocktails but with substitution
-  (<== (stickToTheClasics ?ingredients)
-  (isa ?cocktail CocktailDrink)
-  (evaluate ?cocktailIngredients (TheClosedRetrievalSetOf ?cocktailIngredients (ingredientOf ?cocktailIngredients ?cocktail)))
-  (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?ingredientsOnHand (hasIngredient ?ingredientsOnHand)))
-  (evaluate ?missing (SetDifferenceFn ?cocktailIngredients ?ingredientsOnHand))
-  (equals ?missing (TheSet ?missingIngredient))        ;;; the set ?missing contains one item that is the missing item
-  (evaluate ?substitutes (TheClosedRetrievalSetOf ?substitutes (ObtainableCocktailIngredientFn ?missing ?substitutes))) ;;; evaluate the set of substitutes that can replace the missing ingredient
-  (evaluate ?finalCocktailIngredients (TheClosedRetrievalSetOf ?i (and (elementOf ?z ?cocktailIngredients)
-                                                                      (evaluate ?i (CocktailIngredientFn ?z)))))
-  (evaluate ?ingredients (SetOfSetsUnionFn (TheSet (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients (TheSet (RandomMemberFn ?substitutes))))))
+;   (<== (stickToTheClasics ?ingredients)
+;   (isa ?cocktail CocktailDrink)
+;   (evaluate ?cocktailIngredients (TheClosedRetrievalSetOf ?cocktailIngredients (ingredientOf ?cocktailIngredients ?cocktail)))
+;   (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?ingredientsOnHand (hasIngredient ?ingredientsOnHand)))
+;   (evaluate ?missing (SetDifferenceFn ?cocktailIngredients ?ingredientsOnHand))
+;   (equals ?missing (TheSet ?missingIngredient))        ;;; the set ?missing contains one item that is the missing item
+;   (evaluate ?substitutes (TheClosedRetrievalSetOf ?substitutes (ObtainableCocktailIngredientFn ?missing ?substitutes))) ;;; evaluate the set of substitutes that can replace the missing ingredient
+;   (evaluate ?finalCocktailIngredients (TheClosedRetrievalSetOf ?i (and (elementOf ?z ?cocktailIngredients)
+;                                                                       (evaluate ?i (CocktailIngredientFn ?z)))))
+;   (evaluate ?ingredients (SetOfSetsUnionFn (TheSet (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients (TheSet (RandomMemberFn ?substitutes))))))
 
 (<== (shakeCocktail ?ingredients ?actions)
   (evaluate ?shakableComponents (TheClosedRetrievalSetOf ?x
