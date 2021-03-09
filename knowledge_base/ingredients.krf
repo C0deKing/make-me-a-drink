@@ -16,6 +16,6 @@
 (hasIngredient Gin)
 (hasIngredient (LiqueurOfFn Maraschino))
 (hasIngredient (JuiceOfFn Lemon))
-(hasIngredient (JuiceOfFn Lime))
+; (hasIngredient (JuiceOfFn Lime))
 (hasIngredient MaraschinoCherry)
 (hasIngredient EggWhite)
