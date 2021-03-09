@@ -502,6 +502,10 @@
 (arity isMuddleCocktailIngredient 1)
 (comment isMuddleCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be muddled")
 
+(isa isDryShakeCocktailIngredient Predicate)
+(arity isDryShakeCocktailIngredient 1)
+(comment isDryShakeCocktailIngredient "A predicate denoting whether an entity is a cocktail ingredient that should be dry shaken")
+
 (isa isLiquorCocktailIngredient Predicate)
 (arity isLiquorCocktailIngredient 1)
 (comment isLiquorCocktailIngredient "A predicate denoting whether an entity is a liquor cocktail ingredient")
@@ -521,6 +525,12 @@
 (isa makeMeADrink Predicate)
 (arity makeMeADrink 1)
 (comment makeMeADrink "This relation denotes that a cocktail is makeable based on a users list of ingredients.")
+
+(isa eggWhiteCocktail Predicate)
+(isa eggWhiteCocktail CocktailIngredientRule)
+(arity eggWhiteCocktail 1)
+(comment eggWhiteCocktail "Predicate that evaluates the golden ratio set of ingredients with an egg white. Takes 1 argument, ?ingredients")
+
 
 (isa cocktailGoldenRatio Predicate)
 (isa cocktailGoldenRatio CocktailIngredientRule)
@@ -547,3 +557,8 @@
 (isa muddleCocktail CocktailActionRule)
 (arity muddleCocktail 2)
 (comment muddleCocktail "A rule denoting when a cocktail should be muddled. Takes 2 arguments ?rules ?ingredients")
+
+(isa dryShakeCocktail Predicate)
+(isa dryShakeCocktail CocktailActionRule)
+(arity dryShakeCocktail 2)
+(comment dryShakeCocktail "A rule denoting when a cocktail should be dry shaken. Takes 2 arguments ?rules ?ingredients")

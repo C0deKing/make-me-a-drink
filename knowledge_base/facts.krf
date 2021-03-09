@@ -82,6 +82,9 @@
 (<== (isSweet (JuiceOfFn ?fruit))
      (isa ?fruit StoneFruit))
 
+(<== (isSweet (LiqueurOfFn ?x))
+     (true))
+
 ;;; if a fruit is a berry, then it is sweet
 (<== (isSweet ?fruit)
      (isa ?fruit BerryFruit))
@@ -125,6 +128,12 @@
 
 (<== (isLiquorCocktailIngredient (CocktailIngredientFn ?x))
   (isa ?x (LiqueurOfFn ?y)))
+
+(<== (isDryShakeCocktailIngredient (CocktailIngredientFn ?x))
+     (equals ?x EggWhite))
+
+(<== (isDryShakeCocktailIngredient (CocktailIngredientFn ?x))
+     (equals ?x Aquafaba))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -193,10 +202,9 @@
 (<== (makeMeADrink ?x)
       (isa ?ingredientRule CocktailIngredientRule)
       (evaluate ?actionRules (TheClosedRetrievalSetOf ?actionRule (isa ?actionRule CocktailActionRule)))
-      (evaluate ?ingredients
-          (RandomMemberFn
-           (TheClosedRetrievalSetOf ?i 
-              (?ingredientRule ?i))))
+      (evaluate ?set (TheClosedRetrievalSetOf ?i 
+              (?ingredientRule ?i)))
+      (elementOf ?ingredients ?set)
       (evaluate ?actions (SetOfSetsUnionFn 
               (TheClosedRetrievalSetOf ?a 
                   (and 
@@ -238,6 +246,24 @@
     (hasIngredient ?sour)
     (hasIngredient ?sweet)
     (evaluate ?ingredients (TheSet (CocktailInspirationFn cocktailGoldenRatio) (CocktailIngredientFn ?spirit) (CocktailIngredientFn ?sweet)  (CocktailIngredientFn ?sour))))
+
+(<== (eggWhiteCocktail ?ingredients)
+     (genls ?spirit Liquor-Drink)
+     (isSweet ?sweet)
+     (isSour ?sour)
+     (different ?spirit ?sweet ?sour)
+     (hasIngredient ?spirit)
+     (hasIngredient ?sour)
+     (hasIngredient ?sweet)
+     (hasIngredient EggWhite)
+     (evaluate ?ingredients (TheSet 
+               (CocktailInspirationFn eggWhiteCocktail) 
+               (CocktailIngredientFn EggWhite) 
+               (CocktailIngredientFn ?spirit) 
+               (CocktailIngredientFn ?sweet)  
+               (CocktailIngredientFn ?sour))))
+     
+
 
 (<== (stickToTheClasics ?ingredients)
   (isa ?cocktail CocktailDrink)
@@ -281,5 +307,12 @@
                 (and (elementOf ?x ?ingredients) 
                      (isMuddleCocktailIngredient ?x))))
   (different ?components (TheSet))
-  (isa ?actionRule CocktailActionRule)
   (evaluate ?actions (TheSet (CocktailIngredientActionFn muddleCocktail ?components))))
+
+
+(<== (dryShakeCocktail ?ingredients ?actions)
+     (evaluate ?components (TheClosedRetrievalSetOf ?x
+                (and (elementOf ?x ?ingredients) 
+                     (isDryShakeCocktailIngredient ?x))))
+     (different ?components (TheSet))
+     (evaluate ?actions (TheSet (CocktailActionFn dryShakeCocktail))))

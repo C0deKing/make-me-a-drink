@@ -18,3 +18,4 @@
 (hasIngredient (JuiceOfFn Lemon))
 (hasIngredient (JuiceOfFn Lime))
 (hasIngredient MaraschinoCherry)
+(hasIngredient EggWhite)
