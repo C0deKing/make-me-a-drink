@@ -216,20 +216,19 @@
 ;;; my idea is that you would run (ObtainableCocktailIngredientFn ?ingredientYouNeed ?ingredientYouCanSubstitute) like this
 ;;; (ObtainableCocktailIngredientFn JuiceOfFn(Lime) ?x) and it would return something like JuiceOfFn(Lemon), etc. 
 ; These do not upload properly yet - Matt
-; (<== (ObtainableCocktailIngredientFn ?y ?x)
-;      (hasIngredient ?x)
-;      (isSour ?x)
-;      (isSour ?y)
-;      (different ?x ?y)
-;      (not(hasIngredient ?y)))
+(<== (ObtainableCocktailIngredientFn ?y ?x)
+     (hasIngredient ?x)
+     (isSour ?x)
+     (isSour ?y)
+     (different ?x ?y)
+     (not(hasIngredient ?y)))
 
-;;; this is the try that I feel was closest
+;; this is the try that I feel was closest
 ; (<== (ObtainableCocktailIngredientFn ?x ?y)
 ;      (isSour ?x)
 ;      (evaluate ?y (and (isSour ?y)
 ;                        (hasIngredient ?y)))
 ;      (evaluate ?subs (SetDifferenceFn ?y (TheSet ?x))))
-     
 
 ; (<== (ObtainableCocktailIngredientFn ?y ?x)
 ;      (hasIngredient ?x)
