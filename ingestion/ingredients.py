@@ -65,11 +65,9 @@ def get_ingredients_allrecipes_hardcode(jsonld):
         
     core = []
     garnish = []
-    measurement = ['ounce', 'ounces', 'cup', 'cups', 'tablespoon', 'tablespoons', 'fluid', 'dash', 'sprig', 'teaspoon', 'teaspoons']
-    descriptors = ['fresh ']
+    measurement = ['ounce', 'ounces', 'cup', 'cups', 'tablespoon', 'tablespoons', 'fluid', 'dash', 'sprig', 'teaspoon', 'teaspoons', 'jigger', 'jiggers']
+    descriptors = ['fresh ', 'flavored ']
     liquors = ['whiskey', 'gin', 'vodka', 'tequila', 'rum', 'bourbon', 'brandy']
-    
-    print(ingredients)
     
     for i, ingredient in enumerate(ingredients):
         
@@ -83,6 +81,9 @@ def get_ingredients_allrecipes_hardcode(jsonld):
             
         ingredient = ingredient.encode("ascii", errors="ignore").decode()
         
+        paren = ingredient[ingredient.find('('):ingredient.find(')')+1]
+        ingredient = ingredient.replace(paren, '')
+        
         # Replacing quantifiers from the front of the sentence
         lst = [ing.replace('-',' ') for ing in ingredient.split()]
         while lst[0].isnumeric() or any([x == lst[0] for x in measurement]):
@@ -93,13 +94,13 @@ def get_ingredients_allrecipes_hardcode(jsonld):
         for d in descriptors:
             word = word.replace(d, '')
             
-        # Getting just simple syrup 
         if 'syrup' in word:
             wrdlst = word.split()
             i = wrdlst.index('syrup')
             try:
                 wrd = wrdlst[i-1].capitalize()
                 core.append('(SyrupOfFn %s)' % wrd)
+
             except:
                 core.append("Syrup")
             continue
@@ -175,7 +176,7 @@ def get_ingredients_allrecipes_hardcode(jsonld):
     [res.append(x) for x in core if x not in res] 
             
     return res, garnish
-    
+
 def into_krf(jsonld):
     ingredients, garnish = get_ingredients_allrecipes_hardcode(jsonld)
     name = get_name(jsonld)
@@ -186,12 +187,11 @@ def into_krf(jsonld):
     for g in garnish:
         query.append("(isGarnish %s)" % g)
         
-    print(query)
-        
     return query
-    
-def make_krf(listofdrinks, m='w'):
-    with open("../knowledge_base/cocktails2.krf", mode=m) as file:
+
+def make_krf(listofdrinks):
+
+    with open("../knowledge_base/cocktails2.krf", mode='w') as file:
         file.write("(in-microtheory IngredientsMt)\n")
         file.write("(genlMt MakeMeADrinkMt IngredientsMt)\n")
         
@@ -199,16 +199,19 @@ def make_krf(listofdrinks, m='w'):
             jsonld = get_ld_json(url)
             n = get_name(jsonld)
             name = "(isa %s CocktailDrink)" % n
+            u = "(url %s %s )" % (n, url)
             q = into_krf(jsonld)
 
             cast = []
             cast.append(name)
+            cast.append(u)
+            print(cast)
             for item in q:
                 cast.append(item)
 
             for line in cast:
-                file.write(line + '\n')
-        
+                file.write(line + '\n') 
+
 make_krf(listofdrinks)
 
 
