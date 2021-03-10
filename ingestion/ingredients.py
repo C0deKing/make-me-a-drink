@@ -199,7 +199,7 @@ def make_krf(listofdrinks):
             jsonld = get_ld_json(url)
             n = get_name(jsonld)
             name = "(isa %s CocktailDrink)" % n
-            u = "(url %s %s )" % (n, url)
+            u = '(url %s "%s" )' % (n, url)
             q = into_krf(jsonld)
 
             cast = []
