@@ -1,8 +1,0 @@
-(in-microtheory IngredientsMt)
-(genlMt MakeMeADrinkMt IngredientsMt)
-(isa ManhattanCocktail CocktailDrink)
-(ingredientOf RyeWhiskey ManhattanCocktail)
-(ingredientOf SweetVermouth ManhattanCocktail)
-(ingredientOf AngosturaBitters ManhattanCocktail)
-(ingredientOf Ice ManhattanCocktail)
-(ingredientOf MaraschinoCherry ManhattanCocktail)
