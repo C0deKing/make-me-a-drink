@@ -54,6 +54,8 @@ def get_name(jsonld):
     for i, each in enumerate(name.lower().split()):
         lst.append(each.capitalize())
     name = ''.join(lst)
+
+    name = name.replace("'", '')
     
     return name
 
