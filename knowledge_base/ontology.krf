@@ -563,6 +563,10 @@
 (arity dryShakeCocktail 2)
 (comment dryShakeCocktail "A rule denoting when a cocktail should be dry shaken. Takes 2 arguments ?rules ?ingredients")
 
-(isa ObtainableCocktailIngredientFn BinaryFunction)
-(arity ObtainableCocktailIngredientFn 2)
-(comment ObtainableCocktailIngredientFn "This function denotes that arg1 is a missing item and arg2 is an item that can be substituted.")
+(isa CocktailIngredientSubstituteFn BinaryFunction)
+(arity CocktailIngredientSubstituteFn 2)
+(comment CocktailIngredientSubstituteFn "This function denotes that arg1 is a missing item and arg2 is an item that can be substituted.")
+
+(isa cocktailIngredientSubstitute Predicate)
+(arity cocktailIngredientSubstitute 2)
+(comment cocktailIngredientSubstitute "This predicate denotes that ?x can be replaced by ?y")
