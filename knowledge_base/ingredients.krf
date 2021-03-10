@@ -4,6 +4,7 @@
 (hasIngredient Champagne)
 (hasIngredient Chambord)
 (hasIngredient Lime)
+(hasIngredient (JuiceOfFn Lemon))
 (hasIngredient TripleSec)
 (hasIngredient IceCube)
 (hasIngredient Ice)
