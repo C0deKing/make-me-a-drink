@@ -35,7 +35,18 @@ listofdrinks = [
 "https://www.allrecipes.com/recipe/20103/shaggys-manhattan/",
 "https://www.allrecipes.com/recipe/158307/whiskey-sours/",
 "https://www.allrecipes.com/recipe/162397/classic-old-fashioned/",
-"https://www.allrecipes.com/recipe/160596/rob-roy/"
+"https://www.allrecipes.com/recipe/160596/rob-roy/",
+"https://www.allrecipes.com/recipe/138002/classic-whiskey-sour/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/217233/whiskey-ginger-cocktail/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/222415/manhattan-cocktail/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/222414/gimlet-cocktail/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/222511/tom-collins-cocktail/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/221305/aviation-cocktail/?internalSource=hub%20recipe&referringContentType=Search",
+"https://www.allrecipes.com/recipe/221894/singapore-sling-cocktail/?internalSource=recipe%20hub&referringContentType=Search&clickId=cardslot%2021",
+"https://www.allrecipes.com/recipe/221310/moscow-mule-cocktail/",
+"https://www.allrecipes.com/recipe/221891/cosmopolitan-cocktail/",
+"https://www.allrecipes.com/recipe/221893/vodka-martini-cocktail/",
+"https://www.allrecipes.com/recipe/49444/mint-juleps/"
 ]
 
 def get_ld_json(url: str) -> dict:
@@ -181,6 +192,7 @@ def get_ingredients_allrecipes_hardcode(jsonld):
 
 def into_krf(jsonld):
     ingredients, garnish = get_ingredients_allrecipes_hardcode(jsonld)
+
     name = get_name(jsonld)
     
     query = []
@@ -191,35 +203,57 @@ def into_krf(jsonld):
         
     return query
 
-def make_krf(listofdrinks):
+def make_krf(input_url, m='w'):
 
-    with open("../knowledge_base/cocktails2.krf", mode='w') as file:
-        file.write("(in-microtheory IngredientsMt)\n")
-        file.write("(genlMt MakeMeADrinkMt IngredientsMt)\n")
+    with open("../knowledge_base/cocktails.krf", mode=m) as file:
+        if m == 'w':
+            file.write("(in-microtheory IngredientsMt)\n")
+            file.write("(genlMt MakeMeADrinkMt IngredientsMt)\n")
+
+            for i, url in enumerate(listofdrinks):
+                jsonld = get_ld_json(url)
+                n = get_name(jsonld)
+                name = "(isa %s CocktailDrink)" % n
+                u = '(url %s "%s" )' % (n, url)
+                q = into_krf(jsonld)
+
+                cast = []
+                cast.append(name)
+                cast.append(u)
+                for item in q:
+                    cast.append(item)
+
+                for line in cast:
+                    file.write(line + '\n') 
         
-        for i, url in enumerate(listofdrinks):
-            jsonld = get_ld_json(url)
+        elif m == 'a':
+            jsonld = get_ld_json(input_url)
             n = get_name(jsonld)
             name = "(isa %s CocktailDrink)" % n
-            u = '(url %s "%s" )' % (n, url)
+            u = '(url %s "%s" )' % (n, input_url)
             q = into_krf(jsonld)
 
             cast = []
             cast.append(name)
             cast.append(u)
-            print(cast)
             for item in q:
                 cast.append(item)
 
             for line in cast:
-                file.write(line + '\n') 
+                file.write(line + '\n')
 
-make_krf(listofdrinks)
+            listofdrinks.append(input_url)
+        
+        else:
+            print("Read or improper mode.")
 
 
-# if __name__ == "__main__":
-#     url = sys.argv[1]
-#     try:
-#         mode = sys.argv[2]
-#     except:
-#         mode = 'w'
+if __name__ == "__main__":
+    try:
+        url = sys.argv[1]
+        print("url detected, adding new drink to cocktails.krf")
+        make_krf(url, 'a')
+    except:
+        text = input("No input url detected. Do you want to recreate cocktails.krf with the current list of cocktails? [y/n]\n")
+        if text == 'y':
+            make_krf(listofdrinks)

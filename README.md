@@ -15,7 +15,14 @@ We provide all of the .krf files needed to load the project into companions. The
 ## Generating your own KRF files
 Our project comes with a python script you can run to generate new KRF files based on recipes found on the internet. Follow the below instructions to invoke the script
 
-TODO: @Jonathan please fill in instructions to run
+1. Clone the github into a folder of your choice, then navigate to the directory ~/make-me-a-drink/ingestion.
+2. Copy the url of your desired cocktail. The url must be from allrecipes.com.
+3. Run
+```
+> python ingredients.py "your url here"
+```
+to add your drink to the cocktails.krf file that has all the drinks.
+4. Done
 
 ## Evaluating the knowledge Base
 In order to evaluate the knowledge stored in the knowledge base, you can run the following queries in companions
