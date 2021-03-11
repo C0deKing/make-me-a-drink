@@ -22,6 +22,7 @@ Our project comes with a python script you can run to generate new KRF files bas
 > python ingredients.py "your url here"
 ```
 to add your drink to the cocktails.krf file that has all the drinks.
+
 4. Done
 
 ## Evaluating the knowledge Base
