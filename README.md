@@ -23,7 +23,7 @@ Our project comes with a python script you can run to generate new KRF files bas
 ```
 to add your drink to the cocktails.krf file that has all the drinks.
 
-4. Done
+4. If you don't enter any url, the program will ask you if you want to rewrite the existing cocktails.krf file. This might be useful in the case where you screw up something in the file and would like to start over with a blank slate. If this is the intended purpose, enter 'y' when prompted; otherwise, enter 'n'.
 
 ## Evaluating the knowledge Base
 In order to evaluate the knowledge stored in the knowledge base, you can run the following queries in companions
