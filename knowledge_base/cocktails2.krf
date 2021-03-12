@@ -1,4 +1,4 @@
-(in-microtheory IngredientsMt)
+(in-microtheory Cocktails2Mt)
 (genlMt MakeMeADrinkMt IngredientsMt)
 (isa WhiteRussian CocktailDrink)
 (url WhiteRussian "https://www.allrecipes.com/recipe/85326/white-russian/" )

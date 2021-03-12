@@ -264,18 +264,7 @@
      
 
 
-;;; Classics that we can make with exactly what we have
-; (<== (stickToTheClasics ?ingredients)
-;   (isa ?cocktail CocktailDrink)
-;   (evaluate ?cocktailIngredients (TheClosedRetrievalSetOf ?cocktailIngredients (ingredientOf ?cocktailIngredients ?cocktail)))
-;   (evaluate ?ingredientsOnHand (TheClosedRetrievalSetOf ?ingredientsOnHand (hasIngredient ?ingredientsOnHand)))
-;   (evaluate ?missing (SetDifferenceFn ?cocktailIngredients ?ingredientsOnHand))
-;   (equals ?missing (TheSet))
-;   (evaluate ?finalCocktailIngredients (TheClosedRetrievalSetOf ?i (and (elementOf ?z ?cocktailIngredients)
-;                                                                       (evaluate ?i (CocktailIngredientFn ?z)))))
-;   (evaluate ?ingredients (SetOfSetsUnionFn (TheSet (TheSet (CocktailInspirationFn ?cocktail)) ?finalCocktailIngredients))))
-
-;;; classics cocktails but with substitution
+;;; classics cocktails with substitution
 (<== (stickToTheClasics ?ingredients)
      (isa ?cocktail CocktailDrink)
      (evaluate ?cocktailIngredients (TheClosedRetrievalSetOf ?cocktailIngredients (ingredientOf ?cocktailIngredients ?cocktail)))
