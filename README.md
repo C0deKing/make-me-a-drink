@@ -34,6 +34,7 @@ In order to evaluate the knowledge stored in the knowledge base, you can run the
 ```
 (makeableCocktail ?cocktail ?ingredients)
 ```
+Note: This is initially empty, but if you add `(hasIngredient (JuiceOfFn Lime))` to the KB, it will return results
 
 ### To Find possible drinks you can make (using the rules of cocktail making combined with stored cocktail recipes and substutitions)
 ```
